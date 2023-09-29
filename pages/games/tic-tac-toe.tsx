@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import checkWinner from '~/tic-tac-toe/checkWinner'
 export type Players = '✕' | '○'
 export type Options = 'empty' | '✕' | '○'
@@ -7,7 +7,7 @@ export type Selected = {
     player: Players
     currLength: number
 }
-const TicTacToe = () => {
+export default function TicTacToe() {
     const [{ selected, player, currLength }, setSelected] = useState<Selected>({
         selected: [
             'empty',
@@ -98,24 +98,24 @@ const TicTacToe = () => {
 
     return (
         <>
-            <div className=' my-auto h-screen flex-col content-center justify-center'>
+            <div className='flex-col content-center justify-center h-screen my-auto '>
                 <form
                     action='#'
-                    className=' mx-auto mt-2 flex flex-col'
+                    className='flex flex-col mx-auto mt-2 '
                     onSubmit={(e) => {
                         e.preventDefault()
                         generateGrid()
                     }}>
                     <input
                         ref={inputRef}
-                        className='mx-auto max-w-lg rounded-sm bg-gray-500 p-1'
+                        className='max-w-lg p-1 mx-auto bg-gray-500 rounded-sm'
                         type='number'
                         placeholder='Input number (≤12)'
                     />
                     <button>Generate alternate grid</button>
                 </form>
 
-                <div className=' grid place-content-center'>
+                <div className='grid place-content-center'>
                     <div
                         className={`grid ${gridLength} content-center text-center text-9xl`}>
                         {selected.map((element, i) => {
@@ -123,7 +123,7 @@ const TicTacToe = () => {
                                 <div
                                     key={i}
                                     onClick={() => canClick && handleClick(i)}
-                                    className='m-2 h-32 w-32 bg-gray-500'>
+                                    className='w-32 h-32 m-2 bg-gray-500'>
                                     {selected[i] !== 'empty'
                                         ? selected[i] === '✕'
                                             ? '✕'
@@ -138,4 +138,3 @@ const TicTacToe = () => {
         </>
     )
 }
-export default TicTacToe
