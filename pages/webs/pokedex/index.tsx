@@ -1,11 +1,11 @@
-import { useEffect, useState, type FC } from 'react'
-import { Bulbasaur } from '~/pokedex/initialPokemon'
-import PokemonDisplay from '~/pokedex/PokemonDisplay'
+import { useState } from 'react'
 import DetailedPokemon from '~/pokedex/DetailedPokemon'
+import PokemonDisplay from '~/pokedex/PokemonDisplay'
 import ViewSelector from '~/pokedex/ViewSelector'
+import { Bulbasaur } from '~/pokedex/initialPokemon'
 export type View = 'gallery' | 'list' | 'table'
 type Props = { allPokemon: Bulbasaur[] }
-const App = (props: Props) => {
+export default function App(props: Props) {
     const [view, setView] = useState<View>('gallery')
     const stateUpdate = (view: View) => {
         setView(view)
@@ -31,8 +31,6 @@ const App = (props: Props) => {
         </div>
     )
 }
-
-export default App
 
 export async function getServerSideProps(context: any) {
     let allPokemon: Bulbasaur[] = await fetch(

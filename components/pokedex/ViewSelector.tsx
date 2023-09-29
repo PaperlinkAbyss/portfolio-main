@@ -1,13 +1,12 @@
-import { FC } from 'react'
 import { View } from '~w/pokedex'
 type Props = {
     stateUpdate: (argument: View) => void
     currentState: View
 }
 
-const ViewSelector: FC<Props> = ({ stateUpdate, currentState }) => {
+export default function ViewSelector({ stateUpdate, currentState }: Props) {
     return (
-        <div className='m-1 mb-0 mt-2 flex w-fit flex-row rounded-t-lg border-2 border-b-0 border-cyan-800 bg-cyan-100 p-1'>
+        <div className='flex flex-row p-1 m-1 mt-2 mb-0 border-2 border-b-0 rounded-t-lg w-fit border-cyan-800 bg-cyan-100'>
             <div
                 className={`p-1 ${
                     currentState === 'gallery'
@@ -38,5 +37,3 @@ const ViewSelector: FC<Props> = ({ stateUpdate, currentState }) => {
         </div>
     )
 }
-
-export default ViewSelector

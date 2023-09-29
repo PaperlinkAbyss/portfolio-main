@@ -1,11 +1,11 @@
-import { useState, type FC, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import bulbasaur, {
-    type Sprites,
-    Stats,
     Abilities,
-    Types,
     Bulbasaur,
     ID,
+    Stats,
+    Types,
+    type Sprites,
 } from './initialPokemon'
 import toCap from './toCap'
 type StatePokemon = {
@@ -21,8 +21,7 @@ type DetailedPokemon = {
     selectedPokemon: string
 }
 // https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png
-
-const DetailedPokemon: FC<DetailedPokemon> = ({ selectedPokemon }) => {
+export default function DetailedPokemon({ selectedPokemon }: DetailedPokemon) {
     /**
      * Important Structure For Reference: {
      * .weight,
@@ -98,17 +97,17 @@ const DetailedPokemon: FC<DetailedPokemon> = ({ selectedPokemon }) => {
                     src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${currentPokemon.id}.png`}
                 />
             </div>
-            <main className=' mt-5 flex flex-col text-center'>
+            <main className='flex flex-col mt-5 text-center '>
                 <p>
-                    <strong className=' font-bold'>Name:</strong>
+                    <strong className='font-bold '>Name:</strong>
                     {toCap(currentPokemon.name)}
                 </p>
                 <p>
-                    <strong className=' font-bold'>Height:</strong>
+                    <strong className='font-bold '>Height:</strong>
                     {currentPokemon.height / 10}
                 </p>
                 <p>
-                    <strong className=' font-bold'>
+                    <strong className='font-bold '>
                         {currentPokemon.types[1] ? 'Types: ' : 'Type: '}
                     </strong>
                     {currentPokemon.types[1]
@@ -118,7 +117,7 @@ const DetailedPokemon: FC<DetailedPokemon> = ({ selectedPokemon }) => {
                         : toCap(currentPokemon.types[0].type.name)}
                 </p>
                 <p>
-                    <strong className=' font-bold'>
+                    <strong className='font-bold '>
                         {currentPokemon.abilities[1]
                             ? 'Abilities: '
                             : 'Ability: '}
@@ -130,7 +129,7 @@ const DetailedPokemon: FC<DetailedPokemon> = ({ selectedPokemon }) => {
                         : toCap(currentPokemon.abilities[0].ability.name)}
                 </p>
                 <p>
-                    <strong className=' font-bold'>Stats: </strong>
+                    <strong className='font-bold '>Stats: </strong>
                     {currentPokemon.stats.map((currentStat) => {
                         //Recorre el array de los stats sacando el nombre del atributo (hp, ataque, defensa, especiales, velocidad) y el valor
                         return (
@@ -143,7 +142,7 @@ const DetailedPokemon: FC<DetailedPokemon> = ({ selectedPokemon }) => {
                         )
                     })}
                 </p>
-                <div className='overflow-none mt-5 flex w-full snap-mandatory flex-row place-content-between bg-cyan-100 bg-opacity-60  md:overflow-auto'>
+                <div className='flex flex-row w-full mt-5 overflow-none snap-mandatory place-content-between bg-cyan-100 bg-opacity-60 md:overflow-auto'>
                     {currentPokemon.sprites.front_default && (
                         <img
                             className='snap-x'
@@ -203,12 +202,10 @@ const DetailedPokemon: FC<DetailedPokemon> = ({ selectedPokemon }) => {
                 </div>
                 <button
                     onClick={() => setIsHidden(true)}
-                    className='mt-5 w-fit self-center rounded-md border-2 border-cyan-600 bg-cyan-200 bg-opacity-70  p-2 pr-4 pl-4 font-extrabold hover:bg-cyan-500 md:hidden'>
+                    className='self-center p-2 pl-4 pr-4 mt-5 font-extrabold border-2 rounded-md w-fit border-cyan-600 bg-cyan-200 bg-opacity-70 hover:bg-cyan-500 md:hidden'>
                     Close
                 </button>
             </main>
         </aside>
     )
 }
-
-export default DetailedPokemon
