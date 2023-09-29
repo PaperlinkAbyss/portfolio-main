@@ -6,10 +6,10 @@ At first I thought uploading each proyect on a different repository (which is th
 
 ## Stack
 
--   Next
--   Typescript
--   Tailwind
--   EmblaCarousel(For one page)
+- Next
+- Typescript
+- Tailwind
+- EmblaCarousel(For one page)
 
 ## Installation
 
