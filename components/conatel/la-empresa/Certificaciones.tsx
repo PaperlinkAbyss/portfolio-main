@@ -1,6 +1,6 @@
-import GeneralHeader from '../GeneralHeader';
+import GeneralHeader from '../GeneralHeader'
 
-function Certificaciones() {
+export default function Certificaciones() {
     return (
         <div id='certificaciones'>
             <GeneralHeader>Certificaciones</GeneralHeader>
@@ -21,8 +21,8 @@ function Certificaciones() {
                     La evaluación y supervisión favorece conseguir objetivos
                     para tomar las medidas apropiadas.
                 </div>
-                <div className='link col-span-3 text-center'>
-                    <ul className=' text-blue-600'>
+                <div className='col-span-3 text-center link'>
+                    <ul className='text-blue-600 '>
                         <p className='mb-2 text-xl font-bold text-black !no-underline '>
                             CERTIFICACIONES:
                         </p>
@@ -73,6 +73,5 @@ function Certificaciones() {
                 </div>
             </div>
         </div>
-    );
+    )
 }
-export default Certificaciones;

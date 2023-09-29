@@ -1,13 +1,13 @@
-import { ReactElement } from 'react'
 import Layout from 'c/ConatelLayout'
+import { ReactElement } from 'react'
 
-function Compromisos() {
+export default function Compromisos() {
     return (
         <>
             <div className='relative mx-auto my-0 grid h-[90vh] min-h-full w-[70%] min-w-[70%] place-content-center xl:h-auto lg:w-4/5 md:w-[90%]'>
                 <h1 className='my-5 mb-10 text-4xl font-bold'>Compromisos</h1>
-                <div className='m-auto h-full content-center justify-center'>
-                    <div className='w-300 m-auto my-auto grid grid-cols-3 grid-rows-3 gap-1 text-center'>
+                <div className='content-center justify-center h-full m-auto'>
+                    <div className='grid grid-cols-3 grid-rows-3 gap-1 m-auto my-auto text-center w-300'>
                         <div className=''>
                             <span className='font-semibold'>
                                 1. Desde los comienzos, Conatel ha estado
@@ -102,7 +102,6 @@ function Compromisos() {
         </>
     )
 }
-export default Compromisos
 Compromisos.getLayout = function getLayout(page: ReactElement) {
     return <Layout>{page}</Layout>
 }

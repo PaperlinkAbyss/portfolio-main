@@ -1,15 +1,15 @@
-import GeneralHeader from '../GeneralHeader';
+import GeneralHeader from '../GeneralHeader'
 
-function Bienvenidos() {
+export default function Bienvenidos() {
     return (
         <>
             <GeneralHeader>Bienvenidos</GeneralHeader>
-            <h2 className='mb-5 text-center text-xl font-semibold'>
+            <h2 className='mb-5 text-xl font-semibold text-center'>
                 Consultora Navarra de Telecomunicaciones es una empresa que
                 proyecta, asesora, instala y mantiene equipos y sistemas de
                 telecomunicaciones.
             </h2>
-            <div className='mt-5 grid grid-cols-3 grid-rows-2'>
+            <div className='grid grid-cols-3 grid-rows-2 mt-5'>
                 <p className='font-semibold'>
                     Desarrollamos nuestra actividad en empresas de la Comunidad
                     Foral de Navarra.
@@ -41,15 +41,15 @@ function Bienvenidos() {
                 <h2 className='text-2xl font-extrabold'>
                     Nuestras áreas de actividad
                 </h2>
-                <div className='-mt-20 grid grid-cols-2 grid-rows-2 place-content-center content-center gap-1 text-center  '>
-                    <div className='mt-28 self-center border-r-2 border-black/10 p-0 pb-5 font-bold'>
+                <div className='grid content-center grid-cols-2 grid-rows-2 gap-1 -mt-20 text-center place-content-center '>
+                    <div className='self-center p-0 pb-5 font-bold border-r-2 mt-28 border-black/10'>
                         Telecomunicaciones
                     </div>
-                    <div className='mt-28 self-center p-0 pb-5 font-bold'>
+                    <div className='self-center p-0 pb-5 font-bold mt-28'>
                         Seguridad
                     </div>
-                    <div className='telecomunicaciones grid grid-cols-3 grid-rows-2 content-center gap-2 text-center sm:grid-cols-2'>
-                        <div className='flex content-center  items-center justify-center p-2 text-center '>
+                    <div className='grid content-center grid-cols-3 grid-rows-2 gap-2 text-center telecomunicaciones sm:grid-cols-2'>
+                        <div className='flex items-center content-center justify-center p-2 text-center '>
                             <svg
                                 className='mr-2 sm:hidden'
                                 xmlns='http://www.w3.org/2000/svg'
@@ -63,7 +63,7 @@ function Bienvenidos() {
 
                             <p>Proveedor de Servicios de Internet ISP</p>
                         </div>
-                        <div className='flex content-center items-center justify-center sm:list-none sm:border-r-2 sm:border-black/10 sm:pr-2 '>
+                        <div className='flex items-center content-center justify-center sm:list-none sm:border-r-2 sm:border-black/10 sm:pr-2 '>
                             <svg
                                 className='mr-2 sm:hidden'
                                 xmlns='http://www.w3.org/2000/svg'
@@ -80,7 +80,7 @@ function Bienvenidos() {
                             <p>Telefonía y comunicaciones</p>
                         </div>
 
-                        <div className='flex content-center items-center justify-center border-r-2 border-black/10 p-4 text-center sm:border-none'>
+                        <div className='flex items-center content-center justify-center p-4 text-center border-r-2 border-black/10 sm:border-none'>
                             <svg
                                 className='mr-2 sm:hidden'
                                 width='24'
@@ -102,7 +102,7 @@ function Bienvenidos() {
                             </svg>
                             <p>Cableado y estructurado</p>
                         </div>
-                        <div className='flex content-center items-center justify-center sm:border-r-2 sm:border-black/10 '>
+                        <div className='flex items-center content-center justify-center sm:border-r-2 sm:border-black/10 '>
                             <svg
                                 className='mr-2 sm:hidden'
                                 width='24'
@@ -127,7 +127,7 @@ function Bienvenidos() {
                             </svg>
                             <p>Instalaciones ICT-2</p>
                         </div>
-                        <div className='flex content-center items-center justify-center p-2 text-center'>
+                        <div className='flex items-center content-center justify-center p-2 text-center'>
                             <svg
                                 className='mr-2 sm:hidden'
                                 xmlns='http://www.w3.org/2000/svg'
@@ -139,7 +139,7 @@ function Bienvenidos() {
                             </svg>
                             <p>Megafonía</p>
                         </div>
-                        <div className='flex content-center items-center justify-center border-r-2 border-black/10 pr-4'>
+                        <div className='flex items-center content-center justify-center pr-4 border-r-2 border-black/10'>
                             <svg
                                 className='mr-2 sm:hidden'
                                 xmlns='http://www.w3.org/2000/svg'
@@ -155,8 +155,8 @@ function Bienvenidos() {
                             <p>Comunicación Audiovisual</p>
                         </div>
                     </div>
-                    <div className='seguridad grid grid-cols-2 grid-rows-2 gap-7 '>
-                        <div className='flex content-center items-center justify-center p-2 text-center'>
+                    <div className='grid grid-cols-2 grid-rows-2 seguridad gap-7 '>
+                        <div className='flex items-center content-center justify-center p-2 text-center'>
                             <svg
                                 className='mr-2 sm:hidden'
                                 xmlns='http://www.w3.org/2000/svg'
@@ -168,7 +168,7 @@ function Bienvenidos() {
                             </svg>
                             <p>Networking y seguridad</p>
                         </div>
-                        <div className='flex content-center items-center justify-center p-2 text-center'>
+                        <div className='flex items-center content-center justify-center p-2 text-center'>
                             <svg
                                 className='mr-2 sm:hidden'
                                 xmlns='http://www.w3.org/2000/svg'
@@ -191,7 +191,7 @@ function Bienvenidos() {
                             </svg>
                             <p>CCTV y Seguridad</p>
                         </div>
-                        <div className='flex content-center items-center justify-center p-2 text-center'>
+                        <div className='flex items-center content-center justify-center p-2 text-center'>
                             <svg
                                 className='mr-2 sm:hidden'
                                 xmlns='http://www.w3.org/2000/svg'
@@ -203,7 +203,7 @@ function Bienvenidos() {
                             </svg>
                             <p>Gestión de accesos</p>
                         </div>
-                        <div className='flex content-center items-center justify-center p-2 text-center'>
+                        <div className='flex items-center content-center justify-center p-2 text-center'>
                             <svg
                                 className='mr-2 sm:hidden'
                                 xmlns='http://www.w3.org/2000/svg'
@@ -219,6 +219,5 @@ function Bienvenidos() {
                 </div>
             </div>
         </>
-    );
+    )
 }
-export default Bienvenidos;

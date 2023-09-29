@@ -1,12 +1,12 @@
-import GeneralHeader from '../GeneralHeader';
+import GeneralHeader from '../GeneralHeader'
 
-function Residencial() {
+export default function Residencial() {
     return (
         <>
             <div id='gestion-residencial'>
                 <GeneralHeader>Gestión residencial</GeneralHeader>
                 <div>
-                    <h2 className='mb-8 text-center text-4xl'>
+                    <h2 className='mb-8 text-4xl text-center'>
                         Intercomunicación Residencial y Hospitalaria
                     </h2>
                     <ol className='grid place-content-center'>
@@ -28,6 +28,5 @@ function Residencial() {
                 </div>
             </div>
         </>
-    );
+    )
 }
-export default Residencial;

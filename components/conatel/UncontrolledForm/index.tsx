@@ -1,12 +1,8 @@
-import { useRef, DOMAttributes } from 'react'
+import { DOMAttributes, useRef } from 'react'
 import Input from './Input'
 import TextArea from './TextArea'
 
-type PropType = { sendTo: string }
-type submitEventType = {
-    name: { value: string }
-}
-function ControlledForm() {
+export default function UncontrolledForm() {
     const formRef = useRef<HTMLFormElement>(null)
     const handleSubmit: DOMAttributes<HTMLFormElement>['onSubmit'] = (
         event
@@ -51,7 +47,7 @@ function ControlledForm() {
             <form
                 ref={formRef}
                 onSubmit={handleSubmit}
-                className='ali m-auto my-4 flex w-max flex-col flex-wrap content-center justify-center self-center'
+                className='flex flex-col flex-wrap content-center self-center justify-center m-auto my-4 ali w-max'
                 action='/api/formValidation'
                 encType='text/plain'
                 method='post'>
@@ -77,7 +73,7 @@ function ControlledForm() {
                     <Input
                         name='accepted'
                         type='checkbox'
-                        className='mr-2 w-auto p-1'
+                        className='w-auto p-1 mr-2'
                         id='aviso'
                     />
                     <label htmlFor='aviso'>
@@ -86,7 +82,7 @@ function ControlledForm() {
                     </label>
                 </div>
                 <button
-                    className='mt-2 h-max w-max self-center rounded bg-blue-900 px-4 py-2 font-bold text-white'
+                    className='self-center px-4 py-2 mt-2 font-bold text-white bg-blue-900 rounded h-max w-max'
                     type='submit'
                     value='enviar'>
                     Enviar
@@ -95,4 +91,3 @@ function ControlledForm() {
         </>
     )
 }
-export default ControlledForm

@@ -1,7 +1,7 @@
 import { PropsWithChildren } from 'react'
 import Navbar from './Navbar'
 
-function ConatelLayout({ children }: PropsWithChildren) {
+export default function ConatelLayout({ children }: PropsWithChildren) {
     return (
         <>
             <Navbar />
@@ -10,4 +10,3 @@ function ConatelLayout({ children }: PropsWithChildren) {
         </>
     )
 }
-export default ConatelLayout

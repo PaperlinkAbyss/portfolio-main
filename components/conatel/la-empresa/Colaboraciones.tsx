@@ -1,10 +1,10 @@
-import GeneralHeader from '../GeneralHeader';
+import GeneralHeader from '../GeneralHeader'
 
-function Colaboraciones() {
+export default function Colaboraciones() {
     return (
         <div id='colaboraciones'>
             <GeneralHeader>Colaboraciones</GeneralHeader>
-            <div className='mt-10 grid grid-cols-3 p-5 font-bold sm:grid-cols-2'>
+            <div className='grid grid-cols-3 p-5 mt-10 font-bold sm:grid-cols-2'>
                 <div>
                     Consideramos que la colaboración entre empresas supone una
                     inversión de recursos que hacen que nuestros proyectos sigan
@@ -23,6 +23,5 @@ function Colaboraciones() {
                 </div>
             </div>
         </div>
-    );
+    )
 }
-export default Colaboraciones;

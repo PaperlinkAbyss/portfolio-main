@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from 'next/legacy/image'
 
 type ImgObj = {
     text: string
@@ -6,7 +6,7 @@ type ImgObj = {
     href: string
 }
 export type ImgType = ImgObj[]
-function ImgNav({ img }: { img: ImgType }) {
+export default function ImgNav({ img }: { img: ImgType }) {
     let cols = `grid-cols-${img.length} lg:grid-cols-${
         img.length < 4 ? img.length : 3
     } xl:grid-cols-${img.length} md:grid-cols-${
@@ -23,10 +23,9 @@ function ImgNav({ img }: { img: ImgType }) {
                         <a
                             key={href}
                             href={href}
-                            className='flex-cols px-auto 
-                            m-0 py-4 text-center'>
+                            className='py-4 m-0 text-center flex-cols px-auto'>
                             <Image
-                                className='rounded-full border-2 border-black shadow-md'
+                                className='border-2 border-black rounded-full shadow-md'
                                 src={imgSrc}
                                 width='150'
                                 height={150}
@@ -39,4 +38,3 @@ function ImgNav({ img }: { img: ImgType }) {
         </div>
     )
 }
-export default ImgNav
