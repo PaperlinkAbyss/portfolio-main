@@ -1,11 +1,9 @@
-import React from 'react'
-
-const Main = () => {
+export default function Main() {
     return (
-        <div className='main overflow-hidden'>
-            <div className='imageMain overflow-hidden '>
+        <div className='overflow-hidden main'>
+            <div className='overflow-hidden imageMain '>
                 <img
-                    className='aspect-video min-h-screen min-w-max overflow-x-hidden'
+                    className='min-h-screen overflow-x-hidden aspect-video min-w-max'
                     src='https://www.monier.com.au/-/media/monier/feature/blog/murrumba-downs/header_image1.jpg?h=1421&la=en&w=2280&hash=20FF307A919F8227CEECAB8EF3AF793C33B03B4A'
                     alt=''
                 />
@@ -13,5 +11,3 @@ const Main = () => {
         </div>
     )
 }
-
-export default Main
