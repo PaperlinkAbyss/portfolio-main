@@ -1,7 +1,5 @@
-import { createContext, PropsWithChildren } from 'react'
 import Link from 'next/link'
-import { useState } from 'react'
-import React from 'react'
+import React, { createContext, PropsWithChildren, useState } from 'react'
 export const colores = [
     { nombre: 'Blanco', color: 'rgb(255,255,255)' },
     { nombre: 'amarillo', color: 'rgb(255, 200, 0)' },
@@ -22,7 +20,7 @@ export const ColorContext = createContext({
     nombre: 'black',
     color: 'rgb(255,255,255)',
 })
-function ProcessingLayout({ children }: PropsWithChildren) {
+export default function ProcessingLayout({ children }: PropsWithChildren) {
     const [colorActual, seleccionarColorActual] = useState({
         nombre: 'black',
         color: 'rgb(255,255,255)',
@@ -40,7 +38,7 @@ function ProcessingLayout({ children }: PropsWithChildren) {
     }
     return (
         <>
-            <div className=' pointer-events-none flex flex-wrap'>
+            <div className='flex flex-wrap pointer-events-none '>
                 {colores.map(({ nombre, color }, indice) => {
                     return (
                         <div
@@ -58,7 +56,9 @@ function ProcessingLayout({ children }: PropsWithChildren) {
                     )
                 })}
             </div>
-            <Link className="ml-2" href='/games/processing/'>Vista Normal</Link>
+            <Link className='ml-2' href='/games/processing/'>
+                Vista Normal
+            </Link>
             <Link href='/games/processing/triangles'>Vista Triángulos</Link>
             <ColorContext.Provider value={colorActual}>
                 {children}
@@ -66,4 +66,3 @@ function ProcessingLayout({ children }: PropsWithChildren) {
         </>
     )
 }
-export default ProcessingLayout
