@@ -1,34 +1,34 @@
-import Image from 'next/legacy/image'
-import GeneralHeader from 'c/GeneralHeader'
-import { ReactElement } from 'react'
 import Layout from 'c/ConatelLayout'
+import GeneralHeader from 'c/GeneralHeader'
+import Image from 'next/legacy/image'
+import { ReactElement } from 'react'
 
-function AreaPrivada() {
+export default function AreaPrivada() {
     return (
         <>
             <div className='mx-auto my-0 w-[70%] min-w-[70] place-content-center lg:w-4/5 md:w-[90%]'>
                 <GeneralHeader>Área privada</GeneralHeader>
-                <form className='grid place-content-center text-center'>
+                <form className='grid text-center place-content-center'>
                     <div className='mx-auto'>
                         <Image src='/logo.png' width='300' height='300' />
                     </div>
-                    <h2 className='my-4 text-center text-4xl'>Conatel</h2>
+                    <h2 className='my-4 text-4xl text-center'>Conatel</h2>
                     <input
-                        className='input-general mx-auto w-56'
+                        className='w-56 mx-auto input-general'
                         type='text'
                         name='user'
                         pattern='[a-zA-Z0-9]'
                         placeholder='Usuario'
                     />
                     <input
-                        className='input-general mx-auto mb-4 w-56'
+                        className='w-56 mx-auto mb-4 input-general'
                         type='password'
                         name='password'
                         pattern='[a-zA-Z0-9*]{9}'
                         placeholder='Contraseña'
                     />
                     <button
-                        className='mt-2  self-center rounded bg-blue-900 px-4 py-2 font-bold text-white'
+                        className='self-center px-4 py-2 mt-2 font-bold text-white bg-blue-900 rounded'
                         type='submit'>
                         Enviar
                     </button>
@@ -37,7 +37,6 @@ function AreaPrivada() {
         </>
     )
 }
-export default AreaPrivada
 AreaPrivada.getLayout = function getLayout(page: ReactElement) {
     return <Layout>{page}</Layout>
 }

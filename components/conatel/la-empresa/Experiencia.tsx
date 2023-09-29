@@ -1,6 +1,6 @@
-import GeneralHeader from '../GeneralHeader';
+import GeneralHeader from '../GeneralHeader'
 
-function Experiencia() {
+export default function Experiencia() {
     return (
         <div id='experiencia' className='mb-4'>
             <GeneralHeader>Experiencia</GeneralHeader>
@@ -14,10 +14,10 @@ function Experiencia() {
                 También estamos inscritos en el “Registro de empresas
                 instaladoras de telecomunicación”.
             </p>
-            <div className='grid grid-cols-5 grid-rows-1 gap-3 text-center font-bold sm:grid-cols-2'>
+            <div className='grid grid-cols-5 grid-rows-1 gap-3 font-bold text-center sm:grid-cols-2'>
                 <div className='text-center'>
                     <p>Somos un equipo con</p>
-                    <ol className='inline-block list-inside list-disc text-left sm:list-none'>
+                    <ol className='inline-block text-left list-disc list-inside sm:list-none'>
                         <li>dilatada experiencia</li>
                         <li>alto nivel de cualificación</li>
                         <li>en formación continua.</li>
@@ -47,6 +47,5 @@ function Experiencia() {
                 </div>
             </div>
         </div>
-    );
+    )
 }
-export default Experiencia;

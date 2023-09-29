@@ -1,15 +1,15 @@
-import { NextPage } from 'next'
-import { ReactElement, ReactNode } from 'react'
+import Layout from 'c/ConatelLayout'
 import EmblaCarousel from 'c/EmblaCarousel'
 import GeneralHeader from 'c/GeneralHeader'
 import ImgNav from 'c/ImgNav'
-import { seguridad, serviciosNav, firstSlide, secondSlide } from 'c/data'
-import Layout from 'c/ConatelLayout'
+import { firstSlide, secondSlide, seguridad, serviciosNav } from 'c/data'
+import { NextPage } from 'next'
+import { ReactElement, ReactNode } from 'react'
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
     getLayout?: (page: ReactElement) => ReactNode
 }
 //This one is too big and could probably be split up further to improve readability.
-function Home() {
+export default function Home() {
     return (
         <>
             <div className='mx-auto my-0 w-[70%] min-w-[70%] place-content-center lg:w-4/5 md:w-[90%]'>
@@ -23,7 +23,7 @@ function Home() {
                         ],
                     ]}
                 />
-                <h1 className='text-center text-4xl font-bold'>
+                <h1 className='text-4xl font-bold text-center'>
                     Desde 1996 Consultora Navarra de Telecomunicaciones
                 </h1>
                 <ImgNav img={[...serviciosNav, ...seguridad]} />
@@ -33,7 +33,7 @@ function Home() {
                             version='1.1'
                             id='Layer_1'
                             xmlns='http://www.w3.org/2000/svg'
-                            className='mx-auto w-10'
+                            className='w-10 mx-auto'
                             x='0px'
                             y='0px'
                             viewBox='0 0 484.948 484.948'>
@@ -47,14 +47,14 @@ function Home() {
                                 />
                             </g>
                         </svg>
-                        <h3 className='text-bold my-4 text-2xl'>Conatel</h3>
+                        <h3 className='my-4 text-2xl text-bold'>Conatel</h3>
                     </div>
                     <div className='mt-auto'>
                         <svg
                             xmlns='http://www.w3.org/2000/svg'
                             version='1.1'
                             viewBox='0 0 752 752'
-                            className='mx-auto w-20'>
+                            className='w-20 mx-auto'>
                             <g fill='#12b0fb'>
                                 <path d='m274.18 371.27c-12.312 9.9453-27.469 15.629-44.043 15.629s-32.203-5.6836-44.043-15.629c-20.836 14.207-34.57 38.359-34.57 65.355v20.836c0 7.5781 6.1562 13.734 13.734 13.734h111.29v-20.363c0-21.785 7.1055-42.148 18.941-58.723-2.8398-4.2617-6.1562-8.0508-9.4727-11.367-3.7891-3.3164-7.5742-6.6328-11.84-9.4727z' />
                                 <path d='m230.14 366.53c27.469 0 50.199-22.258 50.199-50.199 0-27.469-22.258-50.199-50.199-50.199-27.469 0-50.199 22.258-50.199 50.199 0 27.465 22.258 50.199 50.199 50.199z' />
@@ -64,7 +64,7 @@ function Home() {
                                 <path d='m376 380.74c27.469 0 50.199-22.258 50.199-50.199 0-27.941-22.73-49.727-50.199-49.727s-50.199 22.258-50.199 50.199c0 27.941 22.734 49.727 50.199 49.727z' />
                             </g>
                         </svg>
-                        <h3 className='text-bold my-4 text-2xl'>Abarcamos</h3>
+                        <h3 className='my-4 text-2xl text-bold'>Abarcamos</h3>
                     </div>
                     <div className='mt-auto'>
                         <svg
@@ -73,7 +73,7 @@ function Home() {
                             x='0px'
                             y='0px'
                             viewBox='0 0 119.713 119.713'
-                            className='mx-auto w-10'>
+                            className='w-10 mx-auto'>
                             <g>
                                 <path
                                     d='M33.92,71.21c-2.479-0.827-5.128-1.281-7.887-1.281c-13.744,0-24.89,11.14-24.89,24.889c0,2.831,0.479,5.549,1.35,8.085
@@ -84,26 +84,26 @@ function Home() {
                                 />
                             </g>
                         </svg>
-                        <h3 className='text-bold my-4 text-2xl'>Disponemos</h3>
+                        <h3 className='my-4 text-2xl text-bold'>Disponemos</h3>
                     </div>
                     <div className='mt-auto'>
                         <svg
                             xmlns='http://www.w3.org/2000/svg'
                             viewBox='0 0 24 24'
-                            className='mx-auto w-10'>
+                            className='w-10 mx-auto'>
                             <path d='M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm1 16.057v-3.057h2.994c-.059 1.143-.212 2.24-.456 3.279-.823-.12-1.674-.188-2.538-.222zm1.957 2.162c-.499 1.33-1.159 2.497-1.957 3.456v-3.62c.666.028 1.319.081 1.957.164zm-1.957-7.219v-3.015c.868-.034 1.721-.103 2.548-.224.238 1.027.389 2.111.446 3.239h-2.994zm0-5.014v-3.661c.806.969 1.471 2.15 1.971 3.496-.642.084-1.3.137-1.971.165zm2.703-3.267c1.237.496 2.354 1.228 3.29 2.146-.642.234-1.311.442-2.019.607-.344-.992-.775-1.91-1.271-2.753zm-7.241 13.56c-.244-1.039-.398-2.136-.456-3.279h2.994v3.057c-.865.034-1.714.102-2.538.222zm2.538 1.776v3.62c-.798-.959-1.458-2.126-1.957-3.456.638-.083 1.291-.136 1.957-.164zm-2.994-7.055c.057-1.128.207-2.212.446-3.239.827.121 1.68.19 2.548.224v3.015h-2.994zm1.024-5.179c.5-1.346 1.165-2.527 1.97-3.496v3.661c-.671-.028-1.329-.081-1.97-.165zm-2.005-.35c-.708-.165-1.377-.373-2.018-.607.937-.918 2.053-1.65 3.29-2.146-.496.844-.927 1.762-1.272 2.753zm-.549 1.918c-.264 1.151-.434 2.36-.492 3.611h-3.933c.165-1.658.739-3.197 1.617-4.518.88.361 1.816.67 2.808.907zm.009 9.262c-.988.236-1.92.542-2.797.9-.89-1.328-1.471-2.879-1.637-4.551h3.934c.058 1.265.231 2.488.5 3.651zm.553 1.917c.342.976.768 1.881 1.257 2.712-1.223-.49-2.326-1.211-3.256-2.115.636-.229 1.299-.435 1.999-.597zm9.924 0c.7.163 1.362.367 1.999.597-.931.903-2.034 1.625-3.257 2.116.489-.832.915-1.737 1.258-2.713zm.553-1.917c.27-1.163.442-2.386.501-3.651h3.934c-.167 1.672-.748 3.223-1.638 4.551-.877-.358-1.81-.664-2.797-.9zm.501-5.651c-.058-1.251-.229-2.46-.492-3.611.992-.237 1.929-.546 2.809-.907.877 1.321 1.451 2.86 1.616 4.518h-3.933z' />
                         </svg>{' '}
-                        <h3 className='text-bold my-4 text-2xl'>Estamos</h3>
+                        <h3 className='my-4 text-2xl text-bold'>Estamos</h3>
                     </div>
                     <div>
                         <ul>
-                            <li className='list-inside list-disc '>
+                            <li className='list-disc list-inside '>
                                 Proyectamos
                             </li>
-                            <li className='list-inside list-disc '>
+                            <li className='list-disc list-inside '>
                                 Implantamos
                             </li>
-                            <li className='list-inside list-disc '>
+                            <li className='list-disc list-inside '>
                                 Mantenemos
                             </li>
                         </ul>
@@ -112,14 +112,14 @@ function Home() {
                     </div>
                     <div>
                         <ul>
-                            <li className='list-inside list-disc '>
+                            <li className='list-disc list-inside '>
                                 Industria
                             </li>
-                            <li className='list-inside list-disc '>Comercio</li>
-                            <li className='list-inside list-disc '>
+                            <li className='list-disc list-inside '>Comercio</li>
+                            <li className='list-disc list-inside '>
                                 Servicios
                             </li>
-                            <li className='list-inside list-disc '>
+                            <li className='list-disc list-inside '>
                                 Administración Pública.
                             </li>
                         </ul>
@@ -142,7 +142,6 @@ function Home() {
         </>
     )
 }
-export default Home
 
 Home.getLayout = function getLayout(page: ReactElement) {
     return <Layout>{page}</Layout>

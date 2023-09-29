@@ -10,7 +10,7 @@ type Options = {
     didWin: boolean | null
     difficulty: number
 }
-function ColorPicker(props: Options) {
+export default function ColorPicker(props: Options) {
     const [options, setOptions] = useState<Options>(props)
     const { selectedColorSpace, color, didWin: didWin, difficulty } = options
     const wonRef = useRef<HTMLDivElement>(null)
@@ -27,7 +27,7 @@ function ColorPicker(props: Options) {
         })
     }
     return (
-        <div className='mb-auto grid h-full place-content-center'>
+        <div className='grid h-full mb-auto place-content-center'>
             <div className='flex justify-around'>
                 <div
                     onClick={() => {
@@ -96,7 +96,7 @@ function ColorPicker(props: Options) {
             </div>
             <div>
                 <div
-                    className='py-1-mb-4 m-2 mx-auto w-max rounded-md border-2 px-4 text-center hover:bg-gray-400'
+                    className='px-4 m-2 mx-auto text-center border-2 rounded-md py-1-mb-4 w-max hover:bg-gray-400'
                     onClick={() =>
                         setOptions({
                             color: getColor(selectedColorSpace, difficulty),
@@ -108,7 +108,7 @@ function ColorPicker(props: Options) {
                     Fácil
                 </div>
                 <div
-                    className='py-1-mb-4 m-2 mx-auto w-max rounded-md border-2 px-4 text-center hover:bg-gray-400'
+                    className='px-4 m-2 mx-auto text-center border-2 rounded-md py-1-mb-4 w-max hover:bg-gray-400'
                     onClick={() =>
                         setOptions({
                             color: getColor(selectedColorSpace, difficulty),
@@ -120,7 +120,7 @@ function ColorPicker(props: Options) {
                     Intermedio
                 </div>
                 <div
-                    className='py-1-mb-4 m-2 mx-auto w-max rounded-md border-2 px-4 text-center hover:bg-gray-400'
+                    className='px-4 m-2 mx-auto text-center border-2 rounded-md py-1-mb-4 w-max hover:bg-gray-400'
                     onClick={() =>
                         setOptions({
                             color: getColor(selectedColorSpace, difficulty),
@@ -132,7 +132,7 @@ function ColorPicker(props: Options) {
                     Difícil
                 </div>
                 <div
-                    className='py-1-mb-4 m-2 mx-auto w-max rounded-md border-2 px-4 text-center hover:bg-gray-400'
+                    className='px-4 m-2 mx-auto text-center border-2 rounded-md py-1-mb-4 w-max hover:bg-gray-400'
                     onClick={() =>
                         setOptions({
                             color: getColor(selectedColorSpace, difficulty),
@@ -145,14 +145,14 @@ function ColorPicker(props: Options) {
                 </div>
             </div>
             <div
-                className='h-40 w-full'
+                className='w-full h-40'
                 style={{ backgroundColor: color.originalColor }}></div>
             <ol>
                 {color.variants.map((el, index) => {
                     if (el === color.originalColor)
                         return (
                             <li
-                                className='m-2 list-inside text-center hover:text-blue-500'
+                                className='m-2 text-center list-inside hover:text-blue-500'
                                 onClick={() => handleClick(true)}
                                 key={el}>
                                 {el}
@@ -160,7 +160,7 @@ function ColorPicker(props: Options) {
                         )
                     return (
                         <li
-                            className='m-2 list-inside text-center hover:text-blue-500'
+                            className='m-2 text-center list-inside hover:text-blue-500'
                             onClick={() => handleClick(false)}
                             key={el}>
                             {el}
@@ -169,12 +169,12 @@ function ColorPicker(props: Options) {
                 })}
             </ol>
             {typeof didWin === 'boolean' && didWin && (
-                <div className='mx-auto mt-2 w-max bg-green-600 text-white'>
+                <div className='mx-auto mt-2 text-white bg-green-600 w-max'>
                     Has acertado!
                 </div>
             )}
             {typeof didWin === 'boolean' && !didWin && (
-                <div className='mx-auto mt-2 w-max bg-red-600 text-white'>
+                <div className='mx-auto mt-2 text-white bg-red-600 w-max'>
                     Has fallado!
                 </div>
             )}
@@ -187,8 +187,6 @@ function ColorPicker(props: Options) {
         </div>
     )
 }
-
-export default ColorPicker
 
 export async function getServerSideProps(context: any) {
     return {

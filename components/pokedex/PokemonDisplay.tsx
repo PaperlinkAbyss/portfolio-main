@@ -1,4 +1,3 @@
-import { type FC } from 'react'
 import { Bulbasaur } from '../pokedex/initialPokemon'
 
 type PokemonSelector = {
@@ -6,11 +5,11 @@ type PokemonSelector = {
     currentState: string
     allPokemon: Bulbasaur[]
 }
-const PokemonDisplay: FC<PokemonSelector> = ({
+export default function PokemonDisplay({
     setSelectedPokemon,
     currentState,
     allPokemon: pokemons,
-}) => {
+}: PokemonSelector) {
     return (
         <div
             className={`mx-auto w-screen md:mr-0 md:overflow-auto md:rounded-none
@@ -78,5 +77,3 @@ const PokemonDisplay: FC<PokemonSelector> = ({
         </div>
     )
 }
-
-export default PokemonDisplay

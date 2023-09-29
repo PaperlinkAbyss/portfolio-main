@@ -1,11 +1,10 @@
 import type { Options, Players } from '~g/tic-tac-toe'
-type WinnerFunction = (
+
+export default function checkWinner(
     checkNextPlayer: Players,
     state: Options[],
     length: number
-) => boolean
-
-const checkWinner: WinnerFunction = (checkNextPlayer, state, length) => {
+) {
     //State is behind so I check the other player
     let currentPlayer = checkNextPlayer === '○' ? '✕' : '○'
     //Winning conditions: 0 1 2, 3 4 5,  6 7 8 (l*i+j) (horizontal lines)
@@ -36,4 +35,3 @@ const checkWinner: WinnerFunction = (checkNextPlayer, state, length) => {
     //The loop has finished checking if the player won, so
     return false
 }
-export default checkWinner

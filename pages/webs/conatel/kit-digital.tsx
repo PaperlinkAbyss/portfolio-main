@@ -1,18 +1,18 @@
-import Image from 'next/legacy/image'
+import Layout from 'c/ConatelLayout'
 import EmblaCarousel from 'c/EmblaCarousel'
 import GeneralHeader from 'c/GeneralHeader'
 import UncontrolledForm from 'c/UncontrolledForm'
-import Layout from 'c/ConatelLayout'
-import { firstSlide as thirdSlide, secondSlide as fourthSlide } from 'c/data'
+import { secondSlide as fourthSlide, firstSlide as thirdSlide } from 'c/data'
+import Image from 'next/legacy/image'
 import { ReactElement } from 'react'
 
-const firstSlide = () => {
+export function FirstSlide() {
     return (
         <div className='grid place-content-center md:max-w-xs'>
-            <h1 className='mx-auto   mb-4 max-w-max self-center bg-white/20 p-2 text-center text-3xl capitalize text-white md:text-sm'>
+            <h1 className='self-center p-2 mx-auto mb-4 text-3xl text-center text-white capitalize max-w-max bg-white/20 md:text-sm'>
                 SOLUCIONES DE DIGITALIZACIÓN
             </h1>
-            <div className='content-center bg-white/80 p-2 text-center'>
+            <div className='content-center p-2 text-center bg-white/80'>
                 <Image
                     src='/Blue_globe_icon.svg'
                     height='150'
@@ -32,20 +32,20 @@ const firstSlide = () => {
         </div>
     )
 }
-const secondSlide = () => {
+export function SecondSlide() {
     return (
-        <div className=' grid place-content-center md:max-w-xs'>
-            <h1 className='mx-auto mb-4 max-w-max content-center self-center bg-white/20 p-2 text-center text-3xl capitalize text-white'>
+        <div className='grid place-content-center md:max-w-xs'>
+            <h1 className='content-center self-center p-2 mx-auto mb-4 text-3xl text-center text-white capitalize max-w-max bg-white/20'>
                 SOLUCIONES DE DIGITALIZACIÓN
             </h1>
-            <div className='content-center bg-white/80 p-2 text-center'>
+            <div className='content-center p-2 text-center bg-white/80'>
                 <img
                     src='/globe2.png'
                     height='150'
                     width='150'
-                    className='relative mx-auto self-center'
+                    className='relative self-center mx-auto'
                 />
-                <div className=' p-2'>
+                <div className='p-2 '>
                     <h2 className='mt-2 font-semibold text-blue-900'>
                         Ciberseguridad
                     </h2>
@@ -61,7 +61,7 @@ const secondSlide = () => {
     )
 }
 
-function KitDigital() {
+export default function KitDigital() {
     return (
         <>
             <div className='mx-auto my-0  w-[70%] min-w-[70%] place-content-center lg:w-4/5 md:w-[90%]'>
@@ -76,7 +76,7 @@ function KitDigital() {
                     ]}
                 />
                 <div>
-                    <h2 className='mb-8 text-center text-4xl text-gray-500'>
+                    <h2 className='mb-8 text-4xl text-center text-gray-500'>
                         ¿QUÉ ES EL KIT DIGITAL?
                     </h2>
                     <p className='text-center'>
@@ -88,7 +88,7 @@ function KitDigital() {
                         subvenciones, de hasta 12.000€, son a fondo perdido y
                         por tanto, no suponen ningún gasto para la empresa.
                     </p>
-                    <p className='pb-14 text-center'>
+                    <p className='text-center pb-14'>
                         Este programa contará con una inversión de más de 3.000
                         millones de euros repartidos de 2021 a 2023 para
                         impulsar el crecimiento y desarrollo de hasta un millón
@@ -105,15 +105,15 @@ function KitDigital() {
                     props={[
                         '/bg-tiled-blue.jpg',
                         [
-                            { structure: firstSlide() },
-                            { structure: secondSlide() },
+                            { structure: FirstSlide() },
+                            { structure: SecondSlide() },
                         ],
                     ]}
                 />
                 <div>
                     <div className='mb-14'>
                         <div className='grid grid-cols-2 grid-rows-1'>
-                            <h2 className='my-auto mr-14 text-right text-4xl text-gray-500'>
+                            <h2 className='my-auto text-4xl text-right text-gray-500 mr-14'>
                                 Requisitos
                             </h2>
                             <ol className=' mx-auto list-inside list-[disc] '>
@@ -159,7 +159,7 @@ function KitDigital() {
                 </div>
                 <div className='bg-gradient-to-r from-cyan-500/30 to-blue-500/30 p-14'>
                     <div className='grid grid-cols-2 '>
-                        <h2 className='t mr-8 text-right text-3xl'>
+                        <h2 className='mr-8 text-3xl text-right t'>
                             ¿Cómo solicito el Bono Digital?
                         </h2>
                         <div>
@@ -173,10 +173,8 @@ function KitDigital() {
                             </p>
                         </div>
                     </div>
-                    <div
-                        className='mx-auto grid 
-                    w-max grid-cols-3 place-content-center gap-2 p-4  md:grid-cols-1'>
-                        <div className=' flex-col  content-center justify-center bg-white p-4 text-center'>
+                    <div className='grid grid-cols-3 gap-2 p-4 mx-auto w-max place-content-center md:grid-cols-1'>
+                        <div className='flex-col content-center justify-center p-4 text-center bg-white '>
                             <svg
                                 xmlns='http://www.w3.org/2000/svg'
                                 version='1.1'
@@ -200,7 +198,7 @@ function KitDigital() {
                                 entre 10 y 50 empleados
                             </p>
                         </div>
-                        <div className=' flex-col  content-center justify-center bg-white p-4 text-center'>
+                        <div className='flex-col content-center justify-center p-4 text-center bg-white '>
                             <svg
                                 xmlns='http://www.w3.org/2000/svg'
                                 version='1.1'
@@ -224,7 +222,7 @@ function KitDigital() {
                                 entre 3 y 9 empleados
                             </p>
                         </div>
-                        <div className=' flex-col  content-center justify-center bg-white p-4 text-center'>
+                        <div className='flex-col content-center justify-center p-4 text-center bg-white '>
                             <svg
                                 xmlns='http://www.w3.org/2000/svg'
                                 version='1.1'
@@ -250,7 +248,7 @@ function KitDigital() {
                         </div>
                     </div>
                 </div>
-                <h2 className='my-10 text-center text-5xl font-semibold italic text-gray-500'>
+                <h2 className='my-10 text-5xl italic font-semibold text-center text-gray-500'>
                     Benefíciate de estas ayudas sin ningún coste
                 </h2>
                 <UncontrolledForm />
@@ -258,7 +256,6 @@ function KitDigital() {
         </>
     )
 }
-export default KitDigital
 KitDigital.getLayout = function getLayout(page: ReactElement) {
     return <Layout>{page}</Layout>
 }

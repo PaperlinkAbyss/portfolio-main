@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { useState } from 'react'
+
 type ProjectType = {
     name: string
     slug: string
@@ -7,7 +8,7 @@ type ProjectType = {
     img?: string
     optional?: string
 }
-const FloatingNav = () => {
+export default function FloatingNav() {
     let projectArray: ProjectType[] = [
         {
             img: '/logo.png',
@@ -47,7 +48,7 @@ const FloatingNav = () => {
         },
     ]
     const [isOpen, setIsOpen] = useState(false)
-    const handleClick = () => {
+    function handleClick() {
         setIsOpen((state) => !state)
     }
     return (
@@ -67,22 +68,22 @@ const FloatingNav = () => {
             </div>
             <div
                 className={`fixed right-9 bottom-20 z-50 h-3/4 w-3/4 bg-gray-400 ${
-                    isOpen ? '' : '-right-full '
+                    isOpen ? '' : 'left-full'
                 } scrollbar overflow-auto rounded-md p-2 transition-all duration-700`}>
                 {projectArray.map(
                     ({ img, name, optional, original, slug }, index) => {
                         if (index < 7)
                             return (
                                 <Link key={index} href={slug}>
-                                    <div className='m-2 flex  flex-col rounded-md border-2 p-2'>
+                                    <div className='flex flex-col p-2 m-2 border-2 rounded-md'>
                                         <div className='flex items-center text-center'>
                                             {img ? (
                                                 <img
                                                     src={img}
-                                                    className='mr-2 w-24'
+                                                    className='w-24 mr-2'
                                                 />
                                             ) : (
-                                                <div className='my-auto mr-2 flex h-24 w-24 shrink-0 items-center justify-center bg-white'>
+                                                <div className='flex items-center justify-center w-24 h-24 my-auto mr-2 bg-white shrink-0'>
                                                     {name
                                                         .split(' ')
                                                         .map((el) =>
@@ -100,7 +101,7 @@ const FloatingNav = () => {
                                                 {optional && <p>{optional}</p>}
                                             </div>
                                         </div>
-                                        <span className='text-sm font-light italic underline'>
+                                        <span className='text-sm italic font-light underline'>
                                             {original}
                                         </span>
                                     </div>
@@ -112,5 +113,3 @@ const FloatingNav = () => {
         </div>
     )
 }
-
-export default FloatingNav

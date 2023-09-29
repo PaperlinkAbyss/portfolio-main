@@ -1,10 +1,15 @@
 type PropType = {
-    name: string;
-    placeholder?: string;
-    cols?: number;
-    rows?: number;
-};
-function TextArea({ name, placeholder = '', cols = 50, rows = 5 }: PropType) {
+    name: string
+    placeholder?: string
+    cols?: number
+    rows?: number
+}
+export default function TextArea({
+    name,
+    placeholder = '',
+    cols = 50,
+    rows = 5,
+}: PropType) {
     return (
         <>
             <textarea
@@ -14,6 +19,5 @@ function TextArea({ name, placeholder = '', cols = 50, rows = 5 }: PropType) {
                 cols={cols}
                 rows={rows}></textarea>
         </>
-    );
+    )
 }
-export default TextArea;

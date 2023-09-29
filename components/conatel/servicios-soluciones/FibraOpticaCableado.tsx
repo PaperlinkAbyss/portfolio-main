@@ -1,14 +1,14 @@
-import Image from "next/legacy/image";
-import GeneralHeader from '../GeneralHeader';
+import Image from 'next/legacy/image'
+import GeneralHeader from '../GeneralHeader'
 
-function FibraOpticaCableado() {
+export default function FibraOpticaCableado() {
     return (
         <>
             <div id='fibra-optica'>
                 <GeneralHeader>Fibra óptica y cableado</GeneralHeader>
                 <div>
                     <h2 className='mb-8 text-4xl'>Cableado Estructurado</h2>
-                    <div className='mb-14 grid grid-cols-2 grid-rows-1 sm:grid-cols-1'>
+                    <div className='grid grid-cols-2 grid-rows-1 mb-14 sm:grid-cols-1'>
                         <ol className='ml-5 sm:mb-2 '>
                             <li className='list-tick'>
                                 Instalaciones de cableado estructurado para
@@ -44,7 +44,7 @@ function FibraOpticaCableado() {
                 <div className='grid grid-cols-2 grid-rows-1 bg-[#e5e7f3] px-14 py-10 sm:grid-cols-1'>
                     <Image src='/fibra-2.jpg' height='300' width='150' />
                     <div className='my-auto sm:mt-4'>
-                        <h2 className='ml-10 mb-2 text-4xl'>
+                        <h2 className='mb-2 ml-10 text-4xl'>
                             Instalaciones ICT-2
                         </h2>
                         <ol className='ml-10'>
@@ -63,6 +63,5 @@ function FibraOpticaCableado() {
                 </div>
             </div>
         </>
-    );
+    )
 }
-export default FibraOpticaCableado;

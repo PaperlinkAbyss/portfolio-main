@@ -1,12 +1,11 @@
-import type { NextPage } from 'next'
 import Link from 'next/link'
 
-const Home: NextPage = () => {
+export default function Home() {
     return (
         <>
             <main className='mx-auto mt-3 grid min-w-[500px] max-w-max grid-cols-2 place-content-center text-center'>
                 <div className=''>
-                    <p className='border-b-2 border-r-2 text-2xl'>Webs</p>
+                    <p className='text-2xl border-b-2 border-r-2'>Webs</p>
                     <ul className=''>
                         <li>
                             <Link href='/webs/conatel'>Conatel</Link>
@@ -22,7 +21,7 @@ const Home: NextPage = () => {
                     </ul>
                 </div>
                 <div>
-                    <p className='border-b-2 text-2xl'>Games</p>
+                    <p className='text-2xl border-b-2'>Games</p>
                     <ul className=''>
                         <li>
                             <Link href='/games/color-picker'>Color picker</Link>
@@ -36,10 +35,10 @@ const Home: NextPage = () => {
                     </ul>
                 </div>
             </main>
-            <h2 className='ml-2 mt-8 mb-4 text-center text-2xl'>Details</h2>
-            <div className='ml-2 grid grid-cols-2'>
+            <h2 className='mt-8 mb-4 ml-2 text-2xl text-center'>Details</h2>
+            <div className='grid grid-cols-2 ml-2'>
                 <div className='m-2'>
-                    <h3 className='mb-2 w-max border-b-2 border-black/20 text-xl'>
+                    <h3 className='mb-2 text-xl border-b-2 w-max border-black/20'>
                         Landing hotel:
                     </h3>
                     <p>
@@ -55,7 +54,7 @@ const Home: NextPage = () => {
                     </p>
                 </div>
                 <div className='m-2'>
-                    <h3 className='mb-2 w-max border-b-2 border-black/20 text-xl'>
+                    <h3 className='mb-2 text-xl border-b-2 w-max border-black/20'>
                         Pokedex:
                     </h3>
                     <p>
@@ -71,7 +70,7 @@ const Home: NextPage = () => {
                     </p>
                 </div>
                 <div className='m-2'>
-                    <h3 className='mb-2 w-max border-b-2 border-black/20 text-xl'>
+                    <h3 className='mb-2 text-xl border-b-2 w-max border-black/20'>
                         Processing:
                     </h3>
                     <p>
@@ -103,7 +102,7 @@ const Home: NextPage = () => {
                     </p>
                 </div>
                 <div className='m-2'>
-                    <h3 className='mb-2 w-max border-b-2 border-black/20 text-xl'>
+                    <h3 className='mb-2 text-xl border-b-2 w-max border-black/20'>
                         Conatel:
                     </h3>
                     <p>
@@ -126,7 +125,7 @@ const Home: NextPage = () => {
                     </p>
                 </div>
                 <div className='m-2'>
-                    <h3 className='mb-2 w-max border-b-2 border-black/20 text-xl'>
+                    <h3 className='mb-2 text-xl border-b-2 w-max border-black/20'>
                         Color picker:
                     </h3>
                     <p>
@@ -140,14 +139,14 @@ const Home: NextPage = () => {
                     </p>
                 </div>
                 <div className='m-2'>
-                    <h3 className='mb-2 w-max border-b-2 border-black/20 text-xl'>
+                    <h3 className='mb-2 text-xl border-b-2 w-max border-black/20'>
                         Tic tac toe:
                     </h3>
                     <p>
                         I actually limited myself with this one. It was meant to
                         be a 3x3 by default that could be expanded to nxn on
                         size. I decided implementing it 3x3 was enough (
-                        <span className='decoration-dashed	'>
+                        <span className='decoration-dashed '>
                             but someday probably it will be my next thing to
                             work on.
                         </span>
@@ -162,5 +161,3 @@ const Home: NextPage = () => {
         </>
     )
 }
-
-export default Home

@@ -8,7 +8,7 @@ type BoughtState = {
 }
 type Kind = keyof BoughtState
 type Operation = BoughtState[Kind]
-const Footer = () => {
+export default function Footer() {
     const [bought, setBought] = useState({
         adults: 1,
         children: 0,
@@ -60,13 +60,13 @@ const Footer = () => {
         }
     }
     return (
-        <div className=' fixed bottom-3 w-full content-center justify-items-center'>
-            <div className='align-self-center mr-4 ml-4 flex flex-row items-center justify-center border bg-white p-1'>
+        <div className='fixed content-center w-full  bottom-3 justify-items-center'>
+            <div className='flex flex-row items-center justify-center p-1 ml-4 mr-4 bg-white border align-self-center'>
                 <div className=''>
-                    <div className=' text-xs'>Hotels </div>
+                    <div className='text-xs '>Hotels </div>
 
                     <select
-                        className=' rounded-sm border-2 border-gray-500'
+                        className='border-2 border-gray-500 rounded-sm '
                         name='hotels'
                         id='hoteles'
                         onChange={(event) =>
@@ -96,49 +96,49 @@ const Footer = () => {
                     </select>
                 </div>
                 <div>
-                    <div className=' ml-1 text-xs'>Date </div>
+                    <div className='ml-1 text-xs '>Date </div>
                     <input
                         type='date'
                         name=''
                         value={bought.date || currentDate}
                         id='fechas'
-                        className='ml-1 rounded-sm border-2 border-gray-500'
+                        className='ml-1 border-2 border-gray-500 rounded-sm'
                         onChange={(event) => {
                             stateUpdate('date', event.target.value)
                         }}
                     />
                 </div>
-                <div className=' center mr-2 ml-2 flex flex-col text-center'>
-                    <div className=' p-1 text-base'>Adults </div>
+                <div className='flex flex-col ml-2 mr-2 text-center  center'>
+                    <div className='p-1 text-base '>Adults </div>
                     <div className='flex flex-row self-center'>
                         <button
-                            className=' border-none bg-gray-400 p-1'
+                            className='p-1 bg-gray-400 border-none '
                             onClick={() => stateUpdate('adults', 1)}>
                             +
                         </button>
-                        <button className='bg-white p-1'>
+                        <button className='p-1 bg-white'>
                             {bought.adults >= 0 ? bought.adults : 0}
                         </button>
                         <button
-                            className=' h-1/2 border-none bg-gray-400 p-1'
+                            className='p-1 bg-gray-400 border-none  h-1/2'
                             onClick={() => stateUpdate('adults', -1)}>
                             -
                         </button>
                     </div>
                 </div>
-                <div className=' center mr-1 ml-1 flex flex-col text-center'>
-                    <div className=' p-1 text-base'>Children </div>
+                <div className='flex flex-col ml-1 mr-1 text-center  center'>
+                    <div className='p-1 text-base '>Children </div>
                     <div className='flex flex-row self-center'>
                         <button
-                            className=' border-none bg-gray-400 p-1'
+                            className='p-1 bg-gray-400 border-none '
                             onClick={() => stateUpdate('children', 1)}>
                             +
                         </button>
-                        <button className='bg-white p-1'>
+                        <button className='p-1 bg-white'>
                             {bought.children >= 0 ? bought.children : 0}
                         </button>
                         <button
-                            className=' border-none bg-gray-400 p-1'
+                            className='p-1 bg-gray-400 border-none '
                             onClick={() => stateUpdate('children', -1)}>
                             -
                         </button>
@@ -146,7 +146,7 @@ const Footer = () => {
                 </div>
                 <div>
                     <button
-                        className='self-center bg-gray-400 p-1'
+                        className='self-center p-1 bg-gray-400'
                         onClick={bookHotel}>
                         Check this date
                     </button>
@@ -155,5 +155,3 @@ const Footer = () => {
         </div>
     )
 }
-
-export default Footer

@@ -1,11 +1,13 @@
-import Image from 'next/legacy/image'
-import { useCallback, useEffect } from 'react'
-import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
+import useEmblaCarousel from 'embla-carousel-react'
+import Image from 'next/legacy/image'
+import { useCallback } from 'react'
 export type Structure = { structure: JSX.Element }
 type Elements = { props: [string, Structure[]] }
 
-function EmblaCarousel({ props: [bgImage, structure] }: Elements) {
+export default function EmblaCarousel({
+    props: [bgImage, structure],
+}: Elements) {
     const [emblaRef, emblaApi] = useEmblaCarousel(
         {
             loop: true,
@@ -31,21 +33,21 @@ function EmblaCarousel({ props: [bgImage, structure] }: Elements) {
 
     return (
         <>
-            <div className='bg-lineas mb-4'>
+            <div className='mb-4 bg-lineas'>
                 <div className='embla '>
                     <Image
                         src={bgImage}
                         width='100'
                         height='100'
                         layout='fill'
-                        className='fixed block w-full object-cover object-center'
+                        className='fixed block object-cover object-center w-full'
                     />
-                    <div className='embla__viewport text-xl' ref={emblaRef}>
+                    <div className='text-xl embla__viewport' ref={emblaRef}>
                         <div className='embla__container'>
-                            <div className='embla__slide grid place-content-center'>
+                            <div className='grid embla__slide place-content-center'>
                                 {structure[0].structure}
                             </div>
-                            <div className='embla__slide mx-auto grid place-content-center'>
+                            <div className='grid mx-auto embla__slide place-content-center'>
                                 {structure[1].structure}
                             </div>
                         </div>
@@ -73,4 +75,3 @@ function EmblaCarousel({ props: [bgImage, structure] }: Elements) {
         </>
     )
 }
-export default EmblaCarousel

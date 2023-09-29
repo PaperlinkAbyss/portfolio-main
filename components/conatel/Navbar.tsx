@@ -8,7 +8,7 @@ const underlineStyles =
 const arrowStyles =
     'inline-block text-xs ml-1 group-hover:-rotate-180 transition-all duration-500 self-center'
 
-function Navbar() {
+export default function Navbar() {
     const inputRef = useRef<HTMLInputElement>(null)
     const removeNavbar = () => {
         if (!inputRef.current) return
@@ -16,48 +16,48 @@ function Navbar() {
     }
     return (
         <>
-            <ul className=' mr-5 flex w-full content-between justify-between py-6 pb-2 shadow lg:text-sm'>
+            <ul className='flex content-between justify-between w-full py-6 pb-2 mr-5 shadow  lg:text-sm'>
                 <div className='my-auto ml-9 '>
                     <li className='mx-2'>
                         <Link legacyBehavior={true} href='/webs/conatel/'>
                             <a
                                 onClick={removeNavbar}
-                                className='  text-5xl font-bold lg:text-3xl'>
+                                className='text-5xl font-bold  lg:text-3xl'>
                                 Conatel
                             </a>
                         </Link>
                     </li>
                 </div>
-                <div className='mr-6 hidden pb-4 md:relative md:block'>
+                <div className='hidden pb-4 mr-6 md:relative md:block'>
                     <input
                         type='checkbox'
-                        className='peer  hidden'
+                        className='hidden peer'
                         id='navbar-input'
                         ref={inputRef}
                     />
                     <label
                         htmlFor='navbar-input'
-                        className='ow-md group relative flex h-12 w-12 transform items-center justify-center overflow-hidden rounded-full ring-0  transition-all duration-200  '>
-                        <div className='flex h-5 w-5 origin-center transform flex-col justify-between overflow-hidden transition-all duration-300'>
-                            <div className='h-1 w-7 origin-left transform bg-gray-500 transition-all duration-300 group-peer-checked:translate-x-10'></div>
-                            <div className='h-1 w-7 transform rounded bg-gray-500 transition-all delay-75 duration-300 group-peer-checked:translate-x-10'></div>
-                            <div className='h-1 w-7 origin-left transform bg-gray-500 transition-all delay-150 duration-300 group-peer-checked:translate-x-10'></div>
+                        className='relative flex items-center justify-center w-12 h-12 overflow-hidden transition-all duration-200 transform rounded-full ow-md group ring-0 '>
+                        <div className='flex flex-col justify-between w-5 h-5 overflow-hidden transition-all duration-300 origin-center transform'>
+                            <div className='h-1 transition-all duration-300 origin-left transform bg-gray-500 w-7 group-peer-checked:translate-x-10'></div>
+                            <div className='h-1 transition-all duration-300 delay-75 transform bg-gray-500 rounded w-7 group-peer-checked:translate-x-10'></div>
+                            <div className='h-1 transition-all duration-300 delay-150 origin-left transform bg-gray-500 w-7 group-peer-checked:translate-x-10'></div>
 
                             <div className='absolute top-2.5 flex w-0 -translate-x-10 transform items-center justify-between transition-all duration-500 group-peer-checked:w-12 group-peer-checked:translate-x-0'>
-                                <div className='absolute h-1 w-5 rotate-0 transform bg-gray-500 transition-all delay-300 duration-500 group-peer-checked:rotate-45'></div>
-                                <div className='absolute h-1 w-5 -rotate-0 transform bg-gray-500 transition-all delay-300 duration-500 group-peer-checked:-rotate-45'></div>
+                                <div className='absolute w-5 h-1 transition-all duration-500 delay-300 transform rotate-0 bg-gray-500 group-peer-checked:rotate-45'></div>
+                                <div className='absolute w-5 h-1 transition-all duration-500 delay-300 transform bg-gray-500 -rotate-0 group-peer-checked:-rotate-45'></div>
                             </div>
                         </div>
                     </label>
-                    <div className=' fixed top-0 left-0 z-10 m-0 hidden h-full w-0 overflow-hidden bg-white pt-10 shadow-md peer-checked:block peer-checked:w-2/3'>
-                        <ol className=' flex-col'>
+                    <div className='fixed top-0 left-0 z-10 hidden w-0 h-full pt-10 m-0 overflow-hidden bg-white shadow-md  peer-checked:block peer-checked:w-2/3'>
+                        <ol className='flex-col '>
                             <li className='mt-4'>
                                 <Link
                                     legacyBehavior={true}
                                     href='/webs/conatel/'>
                                     <a
                                         onClick={removeNavbar}
-                                        className='m-4 p-4 text-4xl font-bold'>
+                                        className='p-4 m-4 text-4xl font-bold'>
                                         Conatel
                                     </a>
                                 </Link>
@@ -69,7 +69,7 @@ function Navbar() {
                                     href='/webs/conatel/la-empresa'>
                                     <a
                                         onClick={removeNavbar}
-                                        className='m-4 p-4 text-xl'>
+                                        className='p-4 m-4 text-xl'>
                                         La empresa
                                     </a>
                                 </Link>
@@ -80,7 +80,7 @@ function Navbar() {
                                     href='/webs/conatel/servicios-comunicaciones'>
                                     <a
                                         onClick={removeNavbar}
-                                        className='m-4 p-4 text-xl'>
+                                        className='p-4 m-4 text-xl'>
                                         Servicios de comunicaciones
                                     </a>
                                 </Link>
@@ -91,7 +91,7 @@ function Navbar() {
                                     href='/webs/conatel/servicios-seguridad'>
                                     <a
                                         onClick={removeNavbar}
-                                        className='m-4 p-4 text-xl'>
+                                        className='p-4 m-4 text-xl'>
                                         Servicios de seguridad
                                     </a>
                                 </Link>
@@ -102,7 +102,7 @@ function Navbar() {
                                     href='/webs/conatel/compromisos'>
                                     <a
                                         onClick={removeNavbar}
-                                        className='m-4 p-4 text-xl'>
+                                        className='p-4 m-4 text-xl'>
                                         Compromisos
                                     </a>
                                 </Link>
@@ -113,7 +113,7 @@ function Navbar() {
                                     href='/webs/conatel/contacto'>
                                     <a
                                         onClick={removeNavbar}
-                                        className='m-4 p-4 text-xl'>
+                                        className='p-4 m-4 text-xl'>
                                         Contacto
                                     </a>
                                 </Link>
@@ -124,7 +124,7 @@ function Navbar() {
                                     href='/webs/conatel/area-privada'>
                                     <a
                                         onClick={removeNavbar}
-                                        className='m-4 p-4 text-xl'>
+                                        className='p-4 m-4 text-xl'>
                                         Área privada
                                     </a>
                                 </Link>
@@ -135,7 +135,7 @@ function Navbar() {
                                     href='/webs/conatel/kit-digital'>
                                     <a
                                         onClick={removeNavbar}
-                                        className='m-4 p-4 text-xl'>
+                                        className='p-4 m-4 text-xl'>
                                         Kit digital
                                     </a>
                                 </Link>
@@ -144,10 +144,10 @@ function Navbar() {
                     </div>
                 </div>
 
-                <div className='mx-11 my-auto flex md:hidden'>
+                <div className='flex my-auto mx-11 md:hidden'>
                     <li className='mx-2'>
                         <ol>
-                            <div className='group relative inline-block'>
+                            <div className='relative inline-block group'>
                                 <li className={`flex`}>
                                     <Link
                                         legacyBehavior={true}
@@ -241,7 +241,7 @@ function Navbar() {
                     </div>
                     <div className='group'>
                         <ol>
-                            <li className='group mx-2 flex'>
+                            <li className='flex mx-2 group'>
                                 <Link
                                     legacyBehavior={true}
                                     href='/webs/conatel/servicios-seguridad'>
@@ -267,28 +267,28 @@ function Navbar() {
                             </div>
                         </ol>
                     </div>
-                    <li className='group mx-2'>
+                    <li className='mx-2 group'>
                         <Link
                             href='/webs/conatel/compromisos'
                             className={`${underlineStyles}`}>
                             Compromisos
                         </Link>
                     </li>
-                    <li className='group mx-2'>
+                    <li className='mx-2 group'>
                         <Link
                             href='/webs/conatel/contacto'
                             className={`${underlineStyles}`}>
                             Contacto
                         </Link>
                     </li>
-                    <li className='group mx-2 '>
+                    <li className='mx-2 group '>
                         <Link
                             href='/webs/conatel/area-privada'
                             className={`${underlineStyles}`}>
                             Área privada
                         </Link>
                     </li>
-                    <li className='group mx-2'>
+                    <li className='mx-2 group'>
                         <Link
                             href='/webs/conatel/kit-digital'
                             className={`${underlineStyles}`}>
@@ -300,4 +300,3 @@ function Navbar() {
         </>
     )
 }
-export default Navbar
