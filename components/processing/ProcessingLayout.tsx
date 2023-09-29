@@ -36,17 +36,19 @@ export default function ProcessingLayout({ children }: PropsWithChildren) {
   }
   return (
     <>
-      <div className='pointer-events-none flex flex-wrap '>
+      <div className='pointer-events-none flex flex-wrap text-center'>
         {colores.map(({ nombre, color }, indice) => {
+          console.log('Mapping', { nombre, color })
           return (
             <div
+              key={nombre + color}
               color={color}
               data-name={nombre}
               className={`${
                 colorActual.nombre === colores[indice].nombre
-                  ? 'border-red border-b-[12px] text-black'
+                  ? 'hover:border-red border-b-[12px] text-black hover:border hover:border-b-[12px]'
                   : ''
-              }pointer-events-auto h-28 w-28 justify-center text-center`}
+              } pointer-events-auto inline-block h-28 w-28 content-center justify-center text-center align-middle hover:border hover:border-black`}
               onClick={(event) => cambiarColorSeleccionado(event)}
               style={{ backgroundColor: `${color}` }}
             >
@@ -56,12 +58,17 @@ export default function ProcessingLayout({ children }: PropsWithChildren) {
         })}
       </div>
       <Link
-        className='ml-2'
+        className='ml-2 mr-2 mt-2 rounded-full border border-black bg-white p-2 hover:bg-gray-100'
         href='/games/processing/'
       >
-        Vista Normal
+        Normal view
       </Link>
-      <Link href='/games/processing/triangles'>Vista Triángulos</Link>
+      <Link
+        className='rounded-full border border-black bg-white p-2 hover:bg-gray-100'
+        href='/games/processing/triangles'
+      >
+        Triangles
+      </Link>
       <ColorContext.Provider value={colorActual}>{children}</ColorContext.Provider>
     </>
   )
