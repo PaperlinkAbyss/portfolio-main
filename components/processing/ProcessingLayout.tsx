@@ -36,7 +36,7 @@ export default function ProcessingLayout({ children }: PropsWithChildren) {
   }
   return (
     <>
-      <div className='pointer-events-none flex flex-wrap text-center'>
+      <div className='pointer-events-none mb-4 flex flex-wrap text-center'>
         {colores.map(({ nombre, color }, indice) => {
           console.log('Mapping', { nombre, color })
           return (
@@ -57,18 +57,20 @@ export default function ProcessingLayout({ children }: PropsWithChildren) {
           )
         })}
       </div>
-      <Link
-        className='ml-2 mr-2 mt-2 rounded-full border border-black bg-white p-2 hover:bg-gray-100'
-        href='/games/processing/'
-      >
-        Normal view
-      </Link>
-      <Link
-        className='rounded-full border border-black bg-white p-2 hover:bg-gray-100'
-        href='/games/processing/triangles'
-      >
-        Triangles
-      </Link>
+      <div className='align-center mx-auto content-center text-center'>
+        <Link
+          className='ml-2 mr-2 mt-2 rounded-full border border-black bg-white p-2 hover:bg-gray-100'
+          href='/games/processing/'
+        >
+          Normal view
+        </Link>
+        <Link
+          className='rounded-full border border-black bg-white p-2 hover:bg-gray-100'
+          href='/games/processing/triangles'
+        >
+          Triangles
+        </Link>
+      </div>
       <ColorContext.Provider value={colorActual}>{children}</ColorContext.Provider>
     </>
   )

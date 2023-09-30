@@ -15,16 +15,14 @@ function Input({
   id = '',
 }: PropType) {
   return (
-    <>
-      <input
-        className={`input-general ${className}`}
-        type={type}
-        pattern={pattern}
-        name={name}
-        placeholder={placeholder}
-        id={id}
-      />
-    </>
+    <input
+      className={`input-general ${className}`}
+      type={type}
+      pattern={pattern}
+      name={name}
+      placeholder={placeholder}
+      id={id}
+    />
   )
 }
 export default Input

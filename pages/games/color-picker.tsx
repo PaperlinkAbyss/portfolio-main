@@ -186,8 +186,8 @@ export default function ColorPicker(props: Options) {
       )}
       <div className='mt-2'>
         <p>
-          This game has difficulty but it only makes it so on average it gets harder, so it can be
-          tricky!
+          The difficulty of this only makes the difference between colors smaller, maybe some cases
+          you get the same numbers for all, sorry!
         </p>
       </div>
     </div>
