@@ -78,7 +78,7 @@ export default function FloatingNav() {
         } scrollbar overflow-auto rounded-md p-2 transition-all duration-700`}
       >
         {projectArray.map(({ img, name, optional, original, slug }, index) => {
-          if (index < 7)
+          if (index < 9)
             return (
               <Link
                 key={index}
