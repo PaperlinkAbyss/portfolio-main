@@ -72,7 +72,7 @@ export default function Home() {
             kind of art for an exposition (
             <a
               className='underline'
-              href='https://www.pamplonaescultura.es/exposiciones/homenaje-a-jabier-villarreal/'
+              href='https://www.diariodenavarra.es/noticias/cultura-ocio/cultura/2022/04/29/el-palacio-condestable-acoge-exposicion-homenaje-artista-profesor-pamplones-jabi-villarreal-525696-1034.html'
             >
               this one
             </a>
