@@ -1,6 +1,6 @@
 export const phoneImage = (
   <svg
-    className=' h-4'
+    className='h-4 '
     xmlns='http://www.w3.org/2000/svg'
     version='1.0'
     viewBox='0 0 1274.000000 1280.000000'

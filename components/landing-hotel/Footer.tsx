@@ -51,7 +51,7 @@ export default function Footer() {
     }
   }
   return (
-    <div className='fixed bottom-3 w-full  content-center justify-items-center'>
+    <div className='fixed bottom-3 w-full content-center justify-items-center'>
       <div className='align-self-center ml-4 mr-4 flex flex-row items-center justify-center border bg-white p-1'>
         <div className=''>
           <div className='text-xs '>Hotels </div>
@@ -101,7 +101,7 @@ export default function Footer() {
             }}
           />
         </div>
-        <div className='center ml-2 mr-2 flex flex-col  text-center'>
+        <div className='center ml-2 mr-2 flex flex-col text-center'>
           <div className='p-1 text-base '>Adults </div>
           <div className='flex flex-row self-center'>
             <button
@@ -112,14 +112,14 @@ export default function Footer() {
             </button>
             <button className='bg-white p-1'>{bought.adults >= 0 ? bought.adults : 0}</button>
             <button
-              className='h-1/2 border-none bg-gray-400  p-1'
+              className='h-1/2 border-none bg-gray-400 p-1'
               onClick={() => stateUpdate('adults', -1)}
             >
               -
             </button>
           </div>
         </div>
-        <div className='center ml-1 mr-1 flex flex-col  text-center'>
+        <div className='center ml-1 mr-1 flex flex-col text-center'>
           <div className='p-1 text-base '>Children </div>
           <div className='flex flex-row self-center'>
             <button

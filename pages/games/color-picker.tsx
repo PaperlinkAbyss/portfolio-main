@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import { default as getColor, type ColorSpace } from '~/color-picker/getColor'
 type Color = {
   originalColor: string
@@ -13,7 +13,6 @@ type Options = {
 export default function ColorPicker(props: Options) {
   const [options, setOptions] = useState<Options>(props)
   const { selectedColorSpace, color, didWin: didWin, difficulty } = options
-  const wonRef = useRef<HTMLDivElement>(null)
   function handleClick(result: boolean) {
     if (!result)
       return setOptions((current) => {
@@ -98,7 +97,7 @@ export default function ColorPicker(props: Options) {
           HEX
         </div>
       </div>
-      <div>
+      <div className='flex'>
         <div
           className='py-1-mb-4 m-2 mx-auto w-max rounded-md border-2 px-4 text-center hover:bg-gray-400'
           onClick={() =>
@@ -110,7 +109,7 @@ export default function ColorPicker(props: Options) {
             })
           }
         >
-          Fácil
+          Easy
         </div>
         <div
           className='py-1-mb-4 m-2 mx-auto w-max rounded-md border-2 px-4 text-center hover:bg-gray-400'
@@ -123,7 +122,7 @@ export default function ColorPicker(props: Options) {
             })
           }
         >
-          Intermedio
+          Intermediate
         </div>
         <div
           className='py-1-mb-4 m-2 mx-auto w-max rounded-md border-2 px-4 text-center hover:bg-gray-400'
@@ -136,7 +135,7 @@ export default function ColorPicker(props: Options) {
             })
           }
         >
-          Difícil
+          Hard
         </div>
         <div
           className='py-1-mb-4 m-2 mx-auto w-max rounded-md border-2 px-4 text-center hover:bg-gray-400'
@@ -149,7 +148,7 @@ export default function ColorPicker(props: Options) {
             })
           }
         >
-          Muy difícil
+          Extreme{' '}
         </div>
       </div>
       <div
@@ -187,8 +186,8 @@ export default function ColorPicker(props: Options) {
       )}
       <div className='mt-2'>
         <p>
-          This game has difficulty but it only makes it so on average it gets harder, so it can be
-          tricky!
+          The difficulty of this only makes the difference between colors smaller, maybe some cases
+          you get the same numbers for all, sorry!
         </p>
       </div>
     </div>

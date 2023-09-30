@@ -1,5 +1,4 @@
 import { ImgType } from './ImgNav'
-import React from 'react'
 export const seguridad: ImgType = [
   {
     href: '/servicios-seguridad#soluciones-seguridad',
