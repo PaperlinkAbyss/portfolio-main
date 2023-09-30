@@ -41,7 +41,7 @@ export default function DetailedPokemon({ selectedPokemon, setSelectedPokemon }:
    *
    * For extra details: Check ./DetailedPokemon.tsx
    */
-  const [currentPokemon, setCurrentPokemon] = useState<Bulbasaur | StatePokemon>('')
+  const [currentPokemon, setCurrentPokemon] = useState<string | Record<string, unknown>>('')
 
   useLayoutEffect(() => {
     fetch(`https://pokeapi.co/api/v2/pokemon/${selectedPokemon}`)

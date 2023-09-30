@@ -38,7 +38,9 @@ export default function App(props: Props) {
 }
 
 export async function getServerSideProps() {
-  const allPokemon: Bulbasaur[] = await fetch('https://pokeapi.co/api/v2/pokemon?limit=150')
+  const allPokemon: Record<string, unknown>[] = await fetch(
+    'https://pokeapi.co/api/v2/pokemon?limit=150',
+  )
     .then((response) => response.json())
     .then((data) => data.results)
 
