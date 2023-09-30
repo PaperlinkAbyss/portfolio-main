@@ -27,7 +27,7 @@ export default function ProcessingLayout({ children }: PropsWithChildren) {
   })
   const cambiarColorSeleccionado = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     const target = event.currentTarget
-    seleccionarColorActual((prev) => {
+    seleccionarColorActual(() => {
       return {
         nombre: target.innerHTML,
         color: target.style.backgroundColor,

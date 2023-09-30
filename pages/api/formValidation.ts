@@ -8,9 +8,8 @@ const fields = {
   accepted: 'on',
   message: '.*',
 }
-t
 type Field = keyof typeof fields
-export default function (req: NextApiRequest) {
+export default function formValidation(req: NextApiRequest) {
   //If JS is not enable it will come as a string
   if (typeof req.body === 'string') {
     const jsonNames = req.body

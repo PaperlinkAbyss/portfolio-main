@@ -56,7 +56,6 @@ export default function TicTacToe() {
       }
     })
   }
-
   useEffect(() => {
     let timeOut: NodeJS.Timeout | number
     console.log({ player, selected, currLength })

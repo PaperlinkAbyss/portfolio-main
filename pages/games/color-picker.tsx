@@ -156,7 +156,7 @@ export default function ColorPicker(props: Options) {
         style={{ backgroundColor: color.originalColor }}
       ></div>
       <ol>
-        {color.variants.map((el, index) => {
+        {color.variants.map((el) => {
           if (el === color.originalColor)
             return (
               <li
@@ -194,7 +194,7 @@ export default function ColorPicker(props: Options) {
   )
 }
 
-export async function getServerSideProps(context: any) {
+export async function getServerSideProps() {
   return {
     props: {
       color: getColor('HSL', 0.5),
