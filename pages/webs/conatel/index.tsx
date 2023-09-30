@@ -5,7 +5,8 @@ import ImgNav from 'c/ImgNav'
 import { firstSlide, secondSlide, seguridad, serviciosNav } from 'c/data'
 import { NextPage } from 'next'
 import { ReactElement, ReactNode } from 'react'
-export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+//
+export type NextPageWithLayout<P = unknown, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode
 }
 //This one is too big and could probably be split up further to improve readability.

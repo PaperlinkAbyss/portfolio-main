@@ -60,7 +60,6 @@
       "react"
     ],
     "rules": {
-      "camelcase": "warn",
       "quotes": [
         "warn",
         "single"
