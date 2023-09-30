@@ -4,9 +4,9 @@ export default function Home() {
   return (
     <>
       <main className='mx-auto mt-3 grid min-w-[500px] max-w-max grid-cols-2 place-content-center text-center'>
-        <div className=''>
+        <div>
           <p className='border-b-2 border-r-2 text-2xl'>Webs</p>
-          <ul className=''>
+          <ul>
             <li>
               <Link href='/webs/conatel'>Conatel</Link>
             </li>
@@ -20,7 +20,7 @@ export default function Home() {
         </div>
         <div>
           <p className='border-b-2 text-2xl'>Games</p>
-          <ul className=''>
+          <ul>
             <li>
               <Link href='/games/color-picker'>Color picker</Link>
             </li>
