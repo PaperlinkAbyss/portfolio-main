@@ -33,7 +33,7 @@ export default function Footer() {
       })
     }
   }
-  const bookHotel = () => {
+  function bookHotel() {
     let displayText = ''
     if (bought.adults > 0) {
       if (bought.children > 0) {
