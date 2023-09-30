@@ -25,10 +25,11 @@ export default function ColorPicker(props: Options) {
       difficulty,
     })
   }
+  console.log('color:', color)
   return (
-    <div className='mb-auto grid h-full place-content-center'>
-      <div className='flex justify-around'>
-        <div
+    <main className='mb-auto grid h-full place-content-center'>
+      <header className='flex justify-around'>
+        <button
           onClick={() => {
             setOptions({
               color: getColor('HSL', difficulty),
@@ -44,8 +45,8 @@ export default function ColorPicker(props: Options) {
           } px-4 py-1 hover:bg-gray-400`}
         >
           HSL
-        </div>
-        <div
+        </button>
+        <button
           onClick={() => {
             setOptions({
               color: getColor('RGB', difficulty),
@@ -61,8 +62,8 @@ export default function ColorPicker(props: Options) {
           } px-4 py-1 hover:bg-gray-400`}
         >
           RGB
-        </div>
-        <div
+        </button>
+        <button
           onClick={() => {
             setOptions({
               color: getColor('RGBA', difficulty),
@@ -78,8 +79,8 @@ export default function ColorPicker(props: Options) {
           } px-4 py-1 hover:bg-gray-400`}
         >
           RGBA
-        </div>
-        <div
+        </button>
+        <button
           onClick={() => {
             setOptions({
               color: getColor('HEX', difficulty),
@@ -95,62 +96,72 @@ export default function ColorPicker(props: Options) {
           } px-4 py-1 hover:bg-gray-400`}
         >
           HEX
-        </div>
-      </div>
-      <div className='flex'>
-        <div
-          className='py-1-mb-4 m-2 mx-auto w-max rounded-md border-2 px-4 text-center hover:bg-gray-400'
-          onClick={() =>
+        </button>
+      </header>
+      <nav className='flex'>
+        <button
+          style={{ backgroundColor: difficulty === 0.5 ? color?.originalColor ?? 'black' : '' }}
+          className={`py-1-mb-4 m-2 mx-auto w-max rounded-md border-2 px-4 text-center hover:bg-gray-400 ${
+            difficulty === 0.5 ? '' : ''
+          }`}
+          onClick={() => {
+            if (difficulty === 0.5) return
             setOptions({
               color: getColor(selectedColorSpace, difficulty),
               selectedColorSpace,
               didWin: null,
               difficulty: 0.5,
             })
-          }
+          }}
         >
           Easy
-        </div>
-        <div
+        </button>
+        <button
+          style={{ backgroundColor: difficulty === 0.3 ? color?.originalColor ?? 'black' : '' }}
           className='py-1-mb-4 m-2 mx-auto w-max rounded-md border-2 px-4 text-center hover:bg-gray-400'
-          onClick={() =>
+          onClick={() => {
+            if (difficulty === 0.3) return
             setOptions({
               color: getColor(selectedColorSpace, difficulty),
               selectedColorSpace,
               didWin: null,
               difficulty: 0.3,
             })
-          }
+          }}
         >
           Intermediate
-        </div>
-        <div
+        </button>
+        <button
+          style={{ backgroundColor: difficulty === 0.2 ? color?.originalColor ?? 'black' : '' }}
           className='py-1-mb-4 m-2 mx-auto w-max rounded-md border-2 px-4 text-center hover:bg-gray-400'
-          onClick={() =>
+          onClick={() => {
+            if (difficulty === 0.2) return
             setOptions({
               color: getColor(selectedColorSpace, difficulty),
               selectedColorSpace,
               didWin: null,
               difficulty: 0.2,
             })
-          }
+          }}
         >
           Hard
-        </div>
-        <div
+        </button>
+        <button
+          style={{ backgroundColor: difficulty === 0.05 ? color?.originalColor ?? 'black' : '' }}
           className='py-1-mb-4 m-2 mx-auto w-max rounded-md border-2 px-4 text-center hover:bg-gray-400'
-          onClick={() =>
+          onClick={() => {
+            if (difficulty === 0.05) return
             setOptions({
               color: getColor(selectedColorSpace, difficulty),
               selectedColorSpace,
               didWin: null,
               difficulty: 0.05,
             })
-          }
+          }}
         >
           Extreme{' '}
-        </div>
-      </div>
+        </button>
+      </nav>
       <div
         className='h-40 w-full'
         style={{ backgroundColor: color.originalColor }}
@@ -190,7 +201,7 @@ export default function ColorPicker(props: Options) {
           you get the same numbers for all, sorry!
         </p>
       </div>
-    </div>
+    </main>
   )
 }
 
