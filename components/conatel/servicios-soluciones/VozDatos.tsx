@@ -7,7 +7,7 @@ export default function VozDatos() {
       <div id='solucion-voz-datos'>
         <GeneralHeader>Solución de voz y datos</GeneralHeader>
         <div className='flex-cols'>
-          <div className='mb-14 grid grid-cols-2  grid-rows-1 sm:grid-cols-1'>
+          <div className='mb-14 grid grid-cols-2 grid-rows-1 sm:grid-cols-1'>
             <div className='self-center'>
               <p className='mb-8 text-4xl'>Proveedor de servicios de internet ISP</p>
               <ol className='ml-5 '>

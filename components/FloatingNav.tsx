@@ -46,6 +46,10 @@ export default function FloatingNav() {
       optional:
         'This was made for a friend that had to do an art exposition and wanted it to be digitally made so I made her life a little bit easier by adding this with a palette she created. Later I added a perspective grid to do the same but without generating code for processing.',
     },
+    {
+      name: 'Starting page',
+      slug: '/',
+    },
   ]
   const [isOpen, setIsOpen] = useState(false)
   function handleClick() {

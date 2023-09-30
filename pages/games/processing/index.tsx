@@ -7,15 +7,15 @@ export default function Page() {
   const colorActual = useContext(ColorContext)
   const arrayPosiciones: { x: number; y: number }[] = generateNormalGrid()
 
-  const cambiarColor = (id: number) => {
+  function changeColor(id: number) {
     const element = document.getElementById(id.toString())
     if (!element) return
     element.style.backgroundColor = colorActual.color
     element.setAttribute('data-color', colorActual.color)
   }
 
-  const generateProcessing = () => {
-    const ole = colores.map(({ color }) => {
+  function generateProcessing() {
+    const colorsArr = colores.map(({ color }) => {
       const cells = Array.from(document.querySelectorAll(`[data-color="${color}"]`))
 
       const coordinates = cells.map((cell) => {
@@ -27,7 +27,7 @@ export default function Page() {
       return { color, coordinates }
     })
     let text = ''
-    ole.forEach(({ color, coordinates }) => {
+    colorsArr.forEach(({ color, coordinates }) => {
       if (color != 'rgb(255,255,255)') {
         text += `fill${color.slice(3)};\n`
         coordinates.forEach(([x, y]) => {
@@ -40,30 +40,35 @@ export default function Page() {
     }
   }
   return (
-    <>
-      <br></br>
+    <div>
       <div
         ref={rootRef}
         className='whitespace-pre'
       ></div>
+      <button
+        className='mx-auto'
+        onClick={() => generateProcessing()}
+      >
+        Click to generate processing
+      </button>
       <br></br>
-      <div className='content-left flex h-[1250px] w-[1250px] flex-wrap'>
+      <div className='content-left mx-auto flex h-[1250px] w-[1250px] flex-wrap'>
         {arrayPosiciones?.map(({ x, y }, indiceArrayPosiciones) => {
           return (
             <>
               <div
                 key={indiceArrayPosiciones}
-                className={'-mb-1 h-[50px] w-[50px] border border-black text-center '}
+                className={'h-[50px] w-[50px] select-none border border-black text-center '}
                 data-y={x}
                 data-x={y}
                 data-color='rgb(255,255,255)'
                 id={`${indiceArrayPosiciones}`}
-                onClick={(e) => {
-                  e.preventDefault()
-                  cambiarColor(indiceArrayPosiciones)
+                onClick={() => {
+                  // e.preventDefault()
+                  changeColor(indiceArrayPosiciones)
                 }}
                 onDragStart={() => {
-                  cambiarColor(indiceArrayPosiciones)
+                  changeColor(indiceArrayPosiciones)
                 }}
               >
                 {indiceArrayPosiciones + 1}
@@ -72,8 +77,7 @@ export default function Page() {
           )
         })}
       </div>
-      <button onClick={() => generateProcessing()}>Hazme click</button>
-    </>
+    </div>
   )
 }
 

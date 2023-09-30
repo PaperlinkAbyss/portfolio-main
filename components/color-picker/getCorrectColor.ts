@@ -1,5 +1,5 @@
-import getVariantColor from './getVariantColor'
 import getRandomNumber from './getRandomNumber'
+import getVariantColor from './getVariantColor'
 
 //This function could be split into several functions.
 

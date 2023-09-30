@@ -15,14 +15,6 @@ export default function UncontrolledForm() {
       accepted: { value: accepted },
       message: { value: message },
     } = formRef.current
-    const body = {
-      name,
-      phone,
-      mail,
-      business,
-      accepted,
-      message,
-    }
     fetch('/api/formValidation', {
       method: 'POST',
       headers: {

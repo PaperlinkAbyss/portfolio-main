@@ -23,7 +23,7 @@ export default function Triangles() {
         id='triangle'
         onClick={(event) => handleClick(event)}
       ></div>
-      <button onClick={() => draw()}>Click me</button>
+      <button onClick={draw}>Click me</button>
     </>
   )
 }

@@ -109,7 +109,7 @@ export default function DetailedPokemon({ selectedPokemon }: DetailedPokemon) {
           {currentPokemon.stats.map((currentStat) => {
             //Recorre el array de los stats sacando el nombre del atributo (hp, ataque, defensa, especiales, velocidad) y el valor
             return (
-              <p>
+              <p key={currentStat.stat.name}>
                 <strong className='font-medium'>{toCap(currentStat.stat.name)}:</strong>
                 {currentStat.base_stat}
               </p>

@@ -4,7 +4,7 @@ import { useRef } from 'react'
 const hoverStyles =
   'absolute hidden transition-all bg-white z-10  group-hover:block duration-500 p-2 border-2 border-transparent rounded-b shadow-lg shadow-black/20 '
 const underlineStyles =
-  'after:content-[\'\']  after:border-b-2 after:border-black border-solid after:block after:scale-0 transition-all group-hover:after:scale-100 group-hover:after:duration-500 group-hover:after:ease-out'
+  "after:content-['']  after:border-b-2 after:border-black border-solid after:block after:scale-0 transition-all group-hover:after:scale-100 group-hover:after:duration-500 group-hover:after:ease-out"
 const arrowStyles =
   'inline-block text-xs ml-1 group-hover:-rotate-180 transition-all duration-500 self-center'
 
@@ -16,7 +16,7 @@ export default function Navbar() {
   }
   return (
     <>
-      <ul className='mr-5 flex w-full content-between justify-between py-6 pb-2 shadow  lg:text-sm'>
+      <ul className='mr-5 flex w-full content-between justify-between py-6 pb-2 shadow lg:text-sm'>
         <div className='my-auto ml-9 '>
           <li className='mx-2'>
             <Link
@@ -25,7 +25,7 @@ export default function Navbar() {
             >
               <a
                 onClick={removeNavbar}
-                className='text-5xl font-bold  lg:text-3xl'
+                className='text-5xl font-bold lg:text-3xl'
               >
                 Conatel
               </a>
@@ -54,7 +54,7 @@ export default function Navbar() {
               </div>
             </div>
           </label>
-          <div className='fixed left-0 top-0 z-10 m-0 hidden h-full w-0 overflow-hidden bg-white pt-10 shadow-md  peer-checked:block peer-checked:w-2/3'>
+          <div className='fixed left-0 top-0 z-10 m-0 hidden h-full w-0 overflow-hidden bg-white pt-10 shadow-md peer-checked:block peer-checked:w-2/3'>
             <ol className='flex-col '>
               <li className='mt-4'>
                 <Link
