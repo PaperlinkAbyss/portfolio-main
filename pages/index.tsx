@@ -36,7 +36,9 @@ export default function Home() {
       <h2 className='mb-4 ml-2 mt-8 text-center text-2xl'>Details</h2>
       <div className='ml-2 grid grid-cols-2'>
         <div className='m-2'>
-          <h3 className='mb-2 w-max border-b-2 border-black/20 text-xl'>Landing hotel:</h3>
+          <h3 className='mb-2 w-max border-b-2 border-black/20 text-xl'>
+            <Link href='/webs/landing-hotel'>Landing hotel:</Link>
+          </h3>
           <p>
             This landing was actually my very first page I created. I did it along the Pokedex to
             prove someone my level of programming (which was very low since I had only been studying
@@ -48,7 +50,9 @@ export default function Home() {
           </p>
         </div>
         <div className='m-2'>
-          <h3 className='mb-2 w-max border-b-2 border-black/20 text-xl'>Pokedex:</h3>
+          <h3 className='mb-2 w-max border-b-2 border-black/20 text-xl'>
+            <Link href='/webs/pokedex'>Pokedex:</Link>
+          </h3>
           <p>
             On this project I learned how to use fetch and got my very first (and only) decent
             design. This one was very fun to do because I had never used APIs. There was also a
@@ -59,7 +63,9 @@ export default function Home() {
           </p>
         </div>
         <div className='m-2'>
-          <h3 className='mb-2 w-max border-b-2 border-black/20 text-xl'>Processing:</h3>
+          <h3 className='mb-2 w-max border-b-2 border-black/20 text-xl'>
+            <Link href='/games/processing'>Processing:</Link>
+          </h3>
           <p>
             This page is more like a &quot;game&quot; but it&apos;s actually neither a game or a
             web. This project was born from a necessity of a friend. She was meant to create some
@@ -85,7 +91,9 @@ export default function Home() {
           </p>
         </div>
         <div className='m-2'>
-          <h3 className='mb-2 w-max border-b-2 border-black/20 text-xl'>Conatel:</h3>
+          <h3 className='mb-2 w-max border-b-2 border-black/20 text-xl'>
+            <Link href='/webs/conatel'>Conatel:</Link>
+          </h3>
           <p>
             My very first page done from 0 with styling. It&apos;s a very simple copy of the
             original (
@@ -105,7 +113,9 @@ export default function Home() {
           </p>
         </div>
         <div className='m-2'>
-          <h3 className='mb-2 w-max border-b-2 border-black/20 text-xl'>Color picker:</h3>
+          <h3 className='mb-2 w-max border-b-2 border-black/20 text-xl'>
+            <Link href='/games/color-picker'>Color picker:</Link>
+          </h3>
           <p>
             This game was actually something that popped up on my instagram while I was in Conatel.
             It looked very fun to do so I tried. It was quite fast and easy to do, but my mind told
@@ -114,7 +124,9 @@ export default function Home() {
           </p>
         </div>
         <div className='m-2'>
-          <h3 className='mb-2 w-max border-b-2 border-black/20 text-xl'>Tic tac toe:</h3>
+          <h3 className='mb-2 w-max border-b-2 border-black/20 text-xl'>
+            <Link href='/games/tic-tac-toe'>Tic tac toe:</Link>
+          </h3>
           <p>
             I actually limited myself with this one. It was meant to be a 3x3 by default that could
             be expanded to nxn on size. I decided implementing it 3x3 was enough (
