@@ -1,5 +1,5 @@
 export default function generateTriangleGrid() {
-  let svg = '<svg width=\'100%\' height=\'100vh\'>'
+  let svg = "<svg className='w-screen mx-auto' width='100vw' height='100vh'>"
   let counter = 0
   const cols = 50,
     rows = 600,
