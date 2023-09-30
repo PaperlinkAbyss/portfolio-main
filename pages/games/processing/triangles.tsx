@@ -1,10 +1,7 @@
-import React, { useRef, useState } from 'react'
+import React, { ReactElement, useContext, useRef } from 'react'
+import ProcessingLayout, { ColorContext } from '~/processing/ProcessingLayout'
 import generateTriangleGrid from '~/processing/generateTriangleGrid'
-import ProcessingLayout from '~/processing/ProcessingLayout'
-import { ReactElement } from 'react'
-import { ColorContext } from '~/processing/ProcessingLayout'
-import { useContext } from 'react'
-export default function triangles() {
+export default function Triangles() {
   const colorActual = useContext(ColorContext)
 
   const triangleRef = useRef<HTMLDivElement>(null)
@@ -26,11 +23,11 @@ export default function triangles() {
         id='triangle'
         onClick={(event) => handleClick(event)}
       ></div>
-      <button onClick={(event) => draw()}>Click me</button>
+      <button onClick={() => draw()}>Click me</button>
     </>
   )
 }
 
-triangles.getLayout = function getLayout(page: ReactElement) {
+Triangles.getLayout = function getLayout(page: ReactElement) {
   return <ProcessingLayout>{page}</ProcessingLayout>
 }

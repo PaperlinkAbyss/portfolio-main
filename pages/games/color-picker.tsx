@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import { default as getColor, type ColorSpace } from '~/color-picker/getColor'
 type Color = {
   originalColor: string
@@ -13,7 +13,6 @@ type Options = {
 export default function ColorPicker(props: Options) {
   const [options, setOptions] = useState<Options>(props)
   const { selectedColorSpace, color, didWin: didWin, difficulty } = options
-  const wonRef = useRef<HTMLDivElement>(null)
   function handleClick(result: boolean) {
     if (!result)
       return setOptions((current) => {

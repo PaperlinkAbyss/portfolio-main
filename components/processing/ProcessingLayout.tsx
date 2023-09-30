@@ -27,7 +27,7 @@ export default function ProcessingLayout({ children }: PropsWithChildren) {
   })
   const cambiarColorSeleccionado = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     const target = event.currentTarget
-    seleccionarColorActual((prev) => {
+    seleccionarColorActual(() => {
       return {
         nombre: target.innerHTML,
         color: target.style.backgroundColor,
@@ -40,6 +40,7 @@ export default function ProcessingLayout({ children }: PropsWithChildren) {
         {colores.map(({ nombre, color }, indice) => {
           return (
             <div
+              key={nombre}
               color={color}
               data-name={nombre}
               className={`${

@@ -1,11 +1,7 @@
-import React, { useContext, useEffect } from 'react'
-import { useState } from 'react'
-import ProcessingLayout from '~/processing/ProcessingLayout'
 import type { ReactElement } from 'react'
+import { useContext, useRef } from 'react'
+import ProcessingLayout, { ColorContext, colores } from '~/processing/ProcessingLayout'
 import generateNormalGrid from '~/processing/generateNormalGrid'
-import { ColorContext } from '~/processing/ProcessingLayout'
-import { useRef } from 'react'
-import { colores } from '~/processing/ProcessingLayout'
 export default function Page() {
   const rootRef = useRef<HTMLDivElement>(null)
   const colorActual = useContext(ColorContext)

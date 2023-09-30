@@ -44,7 +44,8 @@
       "plugin:@typescript-eslint/recommended",
       "plugin:react/recommended",
       "plugin:react-hooks/recommended",
-      "plugin:react/jsx-runtime"
+      "plugin:react/jsx-runtime",
+      "next/core-web-vitals"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -59,12 +60,12 @@
       "react"
     ],
     "rules": {
-      "camelcase": "error",
+      "camelcase": "warn",
       "quotes": [
-        "error",
+        "warn",
         "single"
       ],
-      "react/jsx-uses-react": "error",
+      "react/jsx-uses-react": "warn",
       "react/jsx-uses-vars": "error",
       "react/no-unknown-property": [
         1

@@ -16,7 +16,7 @@ export default function FloatingNav() {
       original: 'https://conatel.biz',
       slug: '/webs/conatel',
       optional:
-        'Conatel is where I did some \'programming\' practices after finishing a programming course. (Mostly wordpress-related)',
+        "Conatel is where I did some 'programming' practices after finishing a programming course. (Mostly wordpress-related)",
     },
     {
       name: 'Color picker',
@@ -32,13 +32,13 @@ export default function FloatingNav() {
       name: 'Landing hotel',
       slug: '/webs/landing-hotel',
       optional:
-        'This was done for someone who wanted to see how much I could do back then when I was in programming for like 1 month, don\'t expect much ',
+        "This was done for someone who wanted to see how much I could do back then when I was in programming for like 1 month, don't expect much ",
     },
     {
       name: 'Pokedex',
       slug: '/webs/pokedex',
       optional:
-        'Same as the landing, someone requested me to test this. The original project used redux but I felt it was an overkill. It\'s very slow since there are so many images and fetches, be careful.',
+        "Same as the landing, someone requested me to test this. The original project used redux but I felt it was an overkill. It's very slow since there are so many images and fetches, be careful.",
     },
     {
       name: 'Processing for a friend',

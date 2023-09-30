@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
+import type { NextApiRequest } from 'next'
 
 const fields = {
   name: '^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$',
@@ -8,9 +8,8 @@ const fields = {
   accepted: 'on',
   message: '.*',
 }
-type Fields = (typeof fields)[Field]
 type Field = keyof typeof fields
-export default function (req: NextApiRequest, res: NextApiResponse) {
+export default function formValidation(req: NextApiRequest) {
   //If JS is not enable it will come as a string
   if (typeof req.body === 'string') {
     const jsonNames = req.body
