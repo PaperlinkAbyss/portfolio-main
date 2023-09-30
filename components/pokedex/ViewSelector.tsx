@@ -6,7 +6,7 @@ type Props = {
 
 export default function ViewSelector({ stateUpdate, currentState }: Props) {
   return (
-    <div className='m-1 mb-0 mt-2 flex w-fit flex-row rounded-t-lg border-2 border-b-0 border-cyan-800 bg-cyan-100 p-1'>
+    <nav className='m-1 mb-0 mt-2 flex w-fit flex-row rounded-t-lg border-2 border-b-0 border-cyan-800 bg-cyan-100 p-1'>
       <div
         className={`p-1 ${
           currentState === 'gallery' ? ' rounded-lg border-2 border-dotted border-cyan-600' : 'p-2'
@@ -31,6 +31,6 @@ export default function ViewSelector({ stateUpdate, currentState }: Props) {
       >
         List
       </div>
-    </div>
+    </nav>
   )
 }

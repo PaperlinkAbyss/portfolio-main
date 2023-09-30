@@ -2,21 +2,20 @@ import { useState } from 'react'
 import DetailedPokemon from '~/pokedex/DetailedPokemon'
 import PokemonDisplay from '~/pokedex/PokemonDisplay'
 import ViewSelector from '~/pokedex/ViewSelector'
-import { Bulbasaur } from '~/pokedex/initialPokemon'
 export type View = 'gallery' | 'list' | 'table'
-type Props = { allPokemon: Bulbasaur[] }
+type Props = { allPokemon: Record<string, unknown>[] }
 export default function App(props: Props) {
   const [view, setView] = useState<View>('gallery')
   const stateUpdate = (view: View) => {
     setView(view)
   }
-  const [selectedPokemon, setSelectedPokemon] = useState<string>(props.allPokemon[0].name)
-  const detailedPokemon = (pokemon: string) => {
+  const [selectedPokemon, setSelectedPokemon] = useState<string>('')
+  function detailedPokemon(pokemon: string) {
     setSelectedPokemon(pokemon)
   }
 
   return (
-    <div className='absolute top-0 mt-[-4px]  w-auto bg-green-200'>
+    <main className='absolute top-0 mt-[-4px]  w-auto bg-green-200'>
       <ViewSelector
         stateUpdate={stateUpdate}
         currentState={view}
@@ -27,9 +26,14 @@ export default function App(props: Props) {
           setSelectedPokemon={detailedPokemon}
           currentState={view}
         />
-        <DetailedPokemon selectedPokemon={selectedPokemon} />
+        {selectedPokemon && (
+          <DetailedPokemon
+            selectedPokemon={selectedPokemon}
+            setSelectedPokemon={setSelectedPokemon}
+          />
+        )}
       </div>
-    </div>
+    </main>
   )
 }
 
