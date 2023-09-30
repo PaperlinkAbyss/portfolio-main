@@ -59,8 +59,8 @@ export function SecondSlide() {
 
 export default function KitDigital() {
   return (
-    <>
-      <div className='mx-auto my-0  w-[70%] min-w-[70%] place-content-center lg:w-4/5 md:w-[90%]'>
+    <main>
+      <article className='mx-auto my-0  w-[70%] min-w-[70%] place-content-center lg:w-4/5 md:w-[90%]'>
         <GeneralHeader>Kit digital</GeneralHeader>
         <EmblaCarousel
           props={[
@@ -68,7 +68,7 @@ export default function KitDigital() {
             [{ structure: thirdSlide() }, { structure: fourthSlide() }],
           ]}
         />
-        <div>
+        <section>
           <h2 className='mb-8 text-center text-4xl text-gray-500'>¿QUÉ ES EL KIT DIGITAL?</h2>
           <p className='text-center'>
             El Kit Digital es una iniciativa del gobierno español dirigida a todas las pequeñas y
@@ -88,14 +88,14 @@ export default function KitDigital() {
 
             // className='h-32'
           />
-        </div>
+        </section>
         <EmblaCarousel
           props={[
             '/bg-tiled-blue.jpg',
             [{ structure: FirstSlide() }, { structure: SecondSlide() }],
           ]}
         />
-        <div>
+        <section>
           <div className='mb-14'>
             <div className='grid grid-cols-2 grid-rows-1'>
               <h2 className='my-auto mr-14 text-right text-4xl text-gray-500'>Requisitos</h2>
@@ -127,8 +127,8 @@ export default function KitDigital() {
               </ol>
             </div>
           </div>
-        </div>
-        <div className='bg-gradient-to-r from-cyan-500/30 to-blue-500/30 p-14'>
+        </section>
+        <section className='bg-gradient-to-r from-cyan-500/30 to-blue-500/30 p-14'>
           <div className='grid grid-cols-2 '>
             <h2 className='t mr-8 text-right text-3xl'>¿Cómo solicito el Bono Digital?</h2>
             <div>
@@ -198,13 +198,13 @@ export default function KitDigital() {
               <p className='text-gray-500'>entre 0 y 2 empleados</p>
             </div>
           </div>
-        </div>
+        </section>
         <h2 className='my-10 text-center text-5xl font-semibold italic text-gray-500'>
           Benefíciate de estas ayudas sin ningún coste
         </h2>
         <UncontrolledForm />
-      </div>
-    </>
+      </article>
+    </main>
   )
 }
 KitDigital.getLayout = function getLayout(page: ReactElement) {

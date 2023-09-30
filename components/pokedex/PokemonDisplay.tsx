@@ -31,7 +31,6 @@ export default function PokemonDisplay({
                         ${currentState === 'table' && ' flex justify-center'}`}
             >
               <img
-                className=''
                 src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
                   index + 1
                 }.png`}

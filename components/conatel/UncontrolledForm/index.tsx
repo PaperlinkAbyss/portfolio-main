@@ -66,7 +66,7 @@ export default function UncontrolledForm() {
           name='message'
           placeholder=' Mensaje'
         />
-        <div className=''>
+        <div>
           <Input
             name='accepted'
             type='checkbox'

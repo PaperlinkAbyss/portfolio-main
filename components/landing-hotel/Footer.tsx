@@ -53,7 +53,7 @@ export default function Footer() {
   return (
     <div className='fixed bottom-3 w-full content-center justify-items-center'>
       <div className='align-self-center ml-4 mr-4 flex flex-row items-center justify-center border bg-white p-1'>
-        <div className=''>
+        <div>
           <div className='text-xs '>Hotels </div>
 
           <select

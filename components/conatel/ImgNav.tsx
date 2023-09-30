@@ -15,7 +15,7 @@ export default function ImgNav({ img }: { img: ImgType }) {
     img.length < 4 ? img.length : 4
   }`
   return (
-    <div className=''>
+    <div>
       <div className={`grid ${cols} mx-1 my-0 mt-16 place-content-center  `}>
         {img.map(({ text, imgSrc, href }) => {
           return (

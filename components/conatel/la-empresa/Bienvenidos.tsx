@@ -2,13 +2,15 @@ import GeneralHeader from '../GeneralHeader'
 
 export default function Bienvenidos() {
   return (
-    <>
-      <GeneralHeader>Bienvenidos</GeneralHeader>
+    <section>
+      <GeneralHeader>
+        <b>Bienvenidos</b>
+      </GeneralHeader>
       <h2 className='mb-5 text-center text-xl font-semibold'>
         Consultora Navarra de Telecomunicaciones es una empresa que proyecta, asesora, instala y
         mantiene equipos y sistemas de telecomunicaciones.
       </h2>
-      <div className='mt-5 grid grid-cols-3 grid-rows-2'>
+      <article className='mt-5 grid grid-cols-3 grid-rows-2'>
         <p className='font-semibold'>
           Desarrollamos nuestra actividad en empresas de la Comunidad Foral de Navarra.
         </p>
@@ -30,10 +32,10 @@ export default function Bienvenidos() {
         <p className='font-semibold'>
           Disponemos de una gran capacidad de adaptación para incluir nuevas soluciones y productos
         </p>
-      </div>
-      <div className='mt-5 grid h-max place-content-center bg-[#e5e7f3] bg-main bg-repeat p-7 text-center '>
+      </article>
+      <article className='mt-5 grid h-max place-content-center bg-[#e5e7f3] bg-main bg-repeat p-7 text-center '>
         <h2 className='text-2xl font-extrabold'>Nuestras áreas de actividad</h2>
-        <div className='-mt-20 grid grid-cols-2 grid-rows-2 place-content-center content-center gap-1 text-center '>
+        <section className='-mt-20 grid grid-cols-2 grid-rows-2 place-content-center content-center gap-1 text-center '>
           <div className='mt-28 self-center border-r-2 border-black/10 p-0 pb-5 font-bold'>
             Telecomunicaciones
           </div>
@@ -228,8 +230,8 @@ export default function Bienvenidos() {
               <p>Gestión residencial y hospitalaria</p>
             </div>
           </div>
-        </div>
-      </div>
-    </>
+        </section>
+      </article>
+    </section>
   )
 }
