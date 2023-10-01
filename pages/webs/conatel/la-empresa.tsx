@@ -7,14 +7,12 @@ import { ReactElement } from 'react'
 
 export default function LaEmpresa() {
   return (
-    <>
-      <div className='mx-auto my-0 grid w-[70%] place-content-center lg:w-4/5 md:w-[90%]'>
-        <Bienvenidos />
-        <Experiencia />
-        <Colaboraciones />
-        <Certificaciones />
-      </div>
-    </>
+    <main className='mx-auto my-0 grid w-[70%] place-content-center lg:w-4/5 md:w-[90%]'>
+      <Bienvenidos />
+      <Experiencia />
+      <Colaboraciones />
+      <Certificaciones />
+    </main>
   )
 }
 LaEmpresa.getLayout = function getLayout(page: ReactElement) {

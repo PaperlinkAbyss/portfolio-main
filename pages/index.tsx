@@ -4,9 +4,9 @@ export default function Home() {
   return (
     <>
       <main className='mx-auto mt-3 grid min-w-[500px] max-w-max grid-cols-2 place-content-center text-center'>
-        <div className=''>
-          <p className='border-b-2 border-r-2 text-2xl'>Webs</p>
-          <ul className=''>
+        <article>
+          <h2 className='border-b-2 border-r-2 text-2xl'>Webs</h2>
+          <ul>
             <li>
               <Link href='/webs/conatel'>Conatel</Link>
             </li>
@@ -17,10 +17,10 @@ export default function Home() {
               <Link href='/webs/pokedex'>Pokedex</Link>
             </li>
           </ul>
-        </div>
-        <div>
-          <p className='border-b-2 text-2xl'>Games</p>
-          <ul className=''>
+        </article>
+        <article>
+          <h2 className='border-b-2 text-2xl'>Games</h2>
+          <ul>
             <li>
               <Link href='/games/color-picker'>Color picker</Link>
             </li>
@@ -31,11 +31,11 @@ export default function Home() {
               <Link href='/games/processing'>Processing</Link>
             </li>
           </ul>
-        </div>
+        </article>
       </main>
       <h2 className='mb-4 ml-2 mt-8 text-center text-2xl'>Details</h2>
-      <div className='ml-2 grid grid-cols-2'>
-        <div className='m-2'>
+      <section className='ml-2 grid grid-cols-2'>
+        <article className='m-2'>
           <h3 className='mb-2 w-max border-b-2 border-black/20 text-xl'>
             <Link href='/webs/landing-hotel'>Landing hotel:</Link>
           </h3>
@@ -48,8 +48,8 @@ export default function Home() {
             It was meant to be bigger but I was only given a week to do it, and it was quite
             overwhelming since at the same time I started using TypeScript and Tailwind.
           </p>
-        </div>
-        <div className='m-2'>
+        </article>
+        <article className='m-2'>
           <h3 className='mb-2 w-max border-b-2 border-black/20 text-xl'>
             <Link href='/webs/pokedex'>Pokedex:</Link>
           </h3>
@@ -61,8 +61,8 @@ export default function Home() {
             page, but I do see the need of taking the state out of react for this one. I will
             probably move the pokemons to a db or try Zustand.
           </p>
-        </div>
-        <div className='m-2'>
+        </article>
+        <article className='m-2'>
           <h3 className='mb-2 w-max border-b-2 border-black/20 text-xl'>
             <Link href='/games/processing'>Processing:</Link>
           </h3>
@@ -89,8 +89,8 @@ export default function Home() {
             way, the main reason being the opposite of the Pokedex, the state would be so big
             it&apos;s probably gonna be very bad for performance.
           </p>
-        </div>
-        <div className='m-2'>
+        </article>
+        <article className='m-2'>
           <h3 className='mb-2 w-max border-b-2 border-black/20 text-xl'>
             <Link href='/webs/conatel'>Conatel:</Link>
           </h3>
@@ -111,8 +111,8 @@ export default function Home() {
             nice and I had a lot of fun with them, they even allowed me to publish it here as my
             portfolio so I&apos;m very thankful.
           </p>
-        </div>
-        <div className='m-2'>
+        </article>
+        <article className='m-2'>
           <h3 className='mb-2 w-max border-b-2 border-black/20 text-xl'>
             <Link href='/games/color-picker'>Color picker:</Link>
           </h3>
@@ -122,22 +122,22 @@ export default function Home() {
             me: You can make it harder (for no reason) so I did. I added more color spaces, options
             for difficulty... And it was madness at first. But very fun to do in general.
           </p>
-        </div>
-        <div className='m-2'>
+        </article>
+        <article className='m-2'>
           <h3 className='mb-2 w-max border-b-2 border-black/20 text-xl'>
             <Link href='/games/tic-tac-toe'>Tic tac toe:</Link>
           </h3>
           <p>
             I actually limited myself with this one. It was meant to be a 3x3 by default that could
             be expanded to nxn on size. I decided implementing it 3x3 was enough (
-            <span className='line-through'>
+            <del className='line-through'>
               but someday probably it will be my next thing to work on.
-            </span>
-            &nbsp;I actually finished it, yay ).
+            </del>
+            <ins className='no-underline'>&nbsp;I actually finished it, yay ).</ins>
           </p>
           <p>This project was also done while being on Conatel on my free time.</p>
-        </div>
-      </div>
+        </article>
+      </section>
     </>
   )
 }

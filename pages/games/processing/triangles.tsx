@@ -18,12 +18,13 @@ export default function Triangles() {
   }
   return (
     <>
+      <button onClick={draw}>Click me</button>
       <div
+        className='mx-auto mt-2 grid w-screen place-content-center'
         ref={triangleRef}
         id='triangle'
         onClick={(event) => handleClick(event)}
       ></div>
-      <button onClick={draw}>Click me</button>
     </>
   )
 }

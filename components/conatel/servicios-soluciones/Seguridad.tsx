@@ -3,10 +3,10 @@ import GeneralHeader from '../GeneralHeader'
 
 export default function Seguridad() {
   return (
-    <>
-      <div id='soluciones-seguridad'>
+    <article>
+      <section id='soluciones-seguridad'>
         <GeneralHeader>Soluciones de seguridad</GeneralHeader>
-        <div>
+        <section>
           <h2 className='mb-8 text-4xl'>CCTV y Seguridad</h2>
           <div className='mb-14 grid grid-cols-2 grid-rows-1'>
             <ol>
@@ -32,8 +32,8 @@ export default function Seguridad() {
               layout='fixed'
             />
           </div>
-        </div>
-        <div className='grid grid-cols-2 grid-rows-1 bg-[#e5e7f3] p-10'>
+        </section>
+        <section className='grid grid-cols-2 grid-rows-1 bg-[#e5e7f3] p-10'>
           <Image
             src='/seg-2.jpg'
             height='300'
@@ -41,7 +41,7 @@ export default function Seguridad() {
           />
           <div className='my-auto pl-8'>
             <h2 className='mb-4 text-4xl'>Gestión de accesos</h2>
-            <ol className=''>
+            <ol>
               <li className='list-tick m-2'>
                 Control de accesos, control de presencia (Dorlet, Digitek)
               </li>
@@ -52,8 +52,8 @@ export default function Seguridad() {
               <li className='list-tick m-2'>Barreras e intercomunicadores</li>
             </ol>
           </div>
-        </div>
-      </div>
-    </>
+        </section>
+      </section>
+    </article>
   )
 }

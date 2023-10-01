@@ -25,18 +25,16 @@ export default function ProcessingLayout({ children }: PropsWithChildren) {
     nombre: 'black',
     color: 'rgb(255,255,255)',
   })
-  const cambiarColorSeleccionado = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+  function swapSelectedColor(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
     const target = event.currentTarget
-    seleccionarColorActual(() => {
-      return {
-        nombre: target.innerHTML,
-        color: target.style.backgroundColor,
-      }
+    seleccionarColorActual({
+      nombre: target.innerHTML,
+      color: target.style.backgroundColor,
     })
   }
   return (
-    <>
-      <div className='pointer-events-none mb-4 flex flex-wrap text-center'>
+    <main>
+      <nav className='pointer-events-none mx-auto mb-4 grid grid-cols-[repeat(14,1fr)] flex-wrap gap-1 text-center'>
         {colores.map(({ nombre, color }, indice) => {
           console.log('Mapping', { nombre, color })
           return (
@@ -46,17 +44,17 @@ export default function ProcessingLayout({ children }: PropsWithChildren) {
               data-name={nombre}
               className={`${
                 colorActual.nombre === colores[indice].nombre
-                  ? 'hover:border-red border-b-[12px] text-black hover:border hover:border-b-[12px]'
+                  ? 'hover:border-red w-auto border-b-[12px] text-black hover:border hover:border-b-[12px]'
                   : ''
-              } pointer-events-auto inline-block h-28 w-28 content-center justify-center text-center align-middle hover:border hover:border-black`}
-              onClick={(event) => cambiarColorSeleccionado(event)}
+              } pointer-events-auto inline-block flex h-28 flex-wrap content-center justify-center text-center align-middle hover:border hover:border-black`}
+              onClick={(event) => swapSelectedColor(event)}
               style={{ backgroundColor: `${color}` }}
             >
               {nombre}
             </div>
           )
         })}
-      </div>
+      </nav>
       <div className='align-center mx-auto content-center text-center'>
         <Link
           className='ml-2 mr-2 mt-2 rounded-full border border-black bg-white p-2 hover:bg-gray-100'
@@ -72,6 +70,6 @@ export default function ProcessingLayout({ children }: PropsWithChildren) {
         </Link>
       </div>
       <ColorContext.Provider value={colorActual}>{children}</ColorContext.Provider>
-    </>
+    </main>
   )
 }

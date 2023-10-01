@@ -15,7 +15,7 @@ export default function Navbar() {
     inputRef.current.checked = false
   }
   return (
-    <>
+    <nav>
       <ul className='mr-5 flex w-full content-between justify-between py-6 pb-2 shadow lg:text-sm'>
         <div className='my-auto ml-9 '>
           <li className='mx-2'>
@@ -184,7 +184,6 @@ export default function Navbar() {
                     <li>
                       <Link
                         legacyBehavior={true}
-                        className=''
                         href='/webs/conatel/la-empresa#bienvenidos'
                         scroll={false}
                       >
@@ -328,6 +327,6 @@ export default function Navbar() {
           </li>
         </div>
       </ul>
-    </>
+    </nav>
   )
 }

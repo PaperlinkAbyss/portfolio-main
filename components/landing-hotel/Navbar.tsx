@@ -1,6 +1,6 @@
+import * as Tooltip from '@radix-ui/react-tooltip'
 import Link from 'next/link'
 import { emailImage, phoneImage, svgFish } from './svg'
-
 export default function Navbar() {
   return (
     <nav className='group absolute top-0 z-50 m-0 flex w-full flex-col text-center text-white transition ease-in-out hover:bg-white hover:text-black'>
@@ -32,17 +32,43 @@ export default function Navbar() {
             </div>
           </nav>
           <div className='relative m-1 ml-2 inline-block h-4 group-hover:text-black'>
-            <div className='peer'>{phoneImage}</div>
-            <span className="after:content-[' '] color-white left-1/2 top-full z-50 -ml-5 mt-2 hidden rounded-md bg-white p-2 text-center  opacity-0 duration-100 after:absolute after:left-1/4 after:-ml-1 after:border-4 after:border-solid after:border-b-black after:border-l-transparent after:border-r-transparent after:border-t-transparent after:opacity-100 ">
-              900-00-00-00
-            </span>
-          </div>
-          <div className='email relative m-1 inline-block group-hover:text-black'>
-            {emailImage}
-            <span className='absolute left-1/2 top-[110%] z-50 -ml-8 mt-2 hidden rounded-md bg-black p-2 text-center text-white opacity-0'>
-              <a className='link'>z5512345z@gmail.com</a>
-            </span>
-          </div>
+            <Tooltip.Provider>
+              <Tooltip.Root>
+                <Tooltip.Trigger asChild>
+                  <div className='text-violet11 hover:bg-violet3 inline-flex h-[35px] w-[35px] items-center justify-center rounded-full  outline-none focus:shadow-[0_0_0_2px] focus:shadow-black'>
+                    {phoneImage}
+                  </div>
+                </Tooltip.Trigger>
+                <Tooltip.Portal>
+                  <Tooltip.Content
+                    className='data-[state=delayed-open]:data-[side=top]:animate-slideDownAndFade data-[state=delayed-open]:data-[side=right]:animate-slideLeftAndFade data-[state=delayed-open]:data-[side=left]:animate-slideRightAndFade data-[state=delayed-open]:data-[side=bottom]:animate-slideUpAndFade text-violet11 z-50 select-none rounded-[4px] bg-white px-[15px] py-[10px] text-[15px] leading-none text-black shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] will-change-[transform,opacity]'
+                    sideOffset={5}
+                    side='bottom'
+                  >
+                    900-00-00-00
+                  </Tooltip.Content>
+                </Tooltip.Portal>
+              </Tooltip.Root>
+            </Tooltip.Provider>
+          </div>{' '}
+          <Tooltip.Provider>
+            <Tooltip.Root>
+              <Tooltip.Trigger asChild>
+                <div className='text-violet11 hover:bg-violet3 inline-flex h-[35px] w-[35px] items-center justify-center rounded-full outline-none  hover:text-black focus:shadow-[0_0_0_2px] focus:shadow-black group-hover:text-black'>
+                  {emailImage}
+                </div>
+              </Tooltip.Trigger>
+              <Tooltip.Portal>
+                <Tooltip.Content
+                  className='data-[state=delayed-open]:data-[side=top]:animate-slideDownAndFade data-[state=delayed-open]:data-[side=right]:animate-slideLeftAndFade data-[state=delayed-open]:data-[side=left]:animate-slideRightAndFade data-[state=delayed-open]:data-[side=bottom]:animate-slideUpAndFade text-violet11 z-50 select-none rounded-[4px] bg-white px-[15px] py-[10px] text-[15px] leading-none text-black shadow-[hsl(206_22%_7%_/_35%)_0px_10px_38px_-10px,_hsl(206_22%_7%_/_20%)_0px_10px_20px_-15px] will-change-[transform,opacity] hover:text-white'
+                  sideOffset={5}
+                  side='bottom'
+                >
+                  z5512345z@gmail.com
+                </Tooltip.Content>
+              </Tooltip.Portal>
+            </Tooltip.Root>
+          </Tooltip.Provider>
         </div>
         <div className='absolute bottom-0 left-0 right-0 top-0 flex flex-row content-center items-center justify-center '>
           <Link

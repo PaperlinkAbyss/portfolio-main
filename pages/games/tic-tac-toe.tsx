@@ -17,7 +17,8 @@ export default function TicTacToe() {
   function generateGrid() {
     if (!inputRef.current) return
     if (!inputRef.current.value || isNaN(parseInt(inputRef.current.value))) return
-    const curr = parseInt(inputRef.current.value)
+    const val = parseInt(inputRef.current.value)
+    const curr = val > 12 ? 12 : val
     const newStateAray = new Array(curr * curr).fill('empty')
     setSelected({
       selected: newStateAray,
@@ -30,7 +31,6 @@ export default function TicTacToe() {
   let canClick = true
 
   function handleClick(index: number) {
-    console.log('clicked')
     if (selected[index] === 'empty') {
       setSelected(({ selected: currentSelected, player: currentPlayer, currLength }) => {
         return {
@@ -47,7 +47,7 @@ export default function TicTacToe() {
   const gridLength = `grid-cols-${currLength}`
 
   function restart(isTie = false) {
-    alert(isTie ? 'Empate :(' : `Congrats ${player === '✕' ? '○' : '✕'}`)
+    alert(isTie ? 'You tied :(' : `Congrats ${player === '✕' ? '○' : '✕'}`)
     setSelected((prev) => {
       return {
         selected: new Array(prev.selected.length).fill('empty'),
@@ -63,13 +63,13 @@ export default function TicTacToe() {
     if (didWin) {
       canClick = false
       console.log({ didWin })
-      timeOut = setTimeout(restart, 2000)
+      timeOut = setTimeout(restart, 500)
     }
     const isFilled = selected.every((value) => value !== 'empty')
     if (isFilled && !didWin) {
       console.log({ falseDidWin: didWin })
       canClick = false
-      timeOut = setTimeout(() => restart(true), 2000)
+      timeOut = setTimeout(() => restart(true), 500)
     }
     return () => {
       if (timeOut) clearTimeout(timeOut)
@@ -77,41 +77,43 @@ export default function TicTacToe() {
   }, [player, selected])
 
   return (
-    <>
-      <div className='my-auto h-screen flex-col content-center justify-center '>
-        <form
-          action='#'
-          className='mx-auto mt-2 flex flex-col '
-          onSubmit={(e) => {
-            e.preventDefault()
-            generateGrid()
-          }}
-        >
-          <input
-            ref={inputRef}
-            className='mx-auto max-w-lg rounded-sm bg-gray-500 p-1'
-            type='number'
-            placeholder='Input number (≤12)'
-          />
-          <button>Generate alternate grid</button>
-        </form>
+    <main className='my-auto h-screen flex-col content-center justify-center '>
+      <form
+        action='#'
+        className='mx-auto mt-2 flex flex-col'
+        onSubmit={(e) => {
+          e.preventDefault()
+          generateGrid()
+        }}
+      >
+        <input
+          ref={inputRef}
+          className='mx-auto w-40 rounded-sm bg-gray-500 p-1 '
+          type='number'
+          max={12}
+          min={2}
+          placeholder='Input number (≤12)'
+        />
+        <button className='mx-auto my-2 w-max rounded-full border border-black p-2'>
+          Generate alternate grid
+        </button>
+      </form>
 
-        <div className='grid place-content-center'>
-          <div className={`grid ${gridLength} content-center text-center text-9xl`}>
-            {selected.map((element, i) => {
-              return (
-                <div
-                  key={i}
-                  onClick={() => canClick && handleClick(i)}
-                  className='m-2 h-32 w-32 bg-gray-500'
-                >
-                  {selected[i] !== 'empty' ? (selected[i] === '✕' ? '✕' : '○') : ''}
-                </div>
-              )
-            })}
-          </div>
+      <div className='grid place-content-center'>
+        <div className={`grid ${gridLength} content-center text-center text-9xl`}>
+          {selected.map((element, i) => {
+            return (
+              <div
+                key={i}
+                onClick={() => canClick && handleClick(i)}
+                className='m-2 h-32 w-32 bg-gray-500'
+              >
+                {selected[i] !== 'empty' ? (selected[i] === '✕' ? '✕' : '○') : ''}
+              </div>
+            )
+          })}
         </div>
       </div>
-    </>
+    </main>
   )
 }

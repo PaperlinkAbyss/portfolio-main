@@ -5,7 +5,7 @@ export default function ConatelLayout({ children }: PropsWithChildren) {
   return (
     <>
       <Navbar />
-      <main className=''>{children}</main>
+      <main>{children}</main>
       <div className='m-10'></div>
     </>
   )
