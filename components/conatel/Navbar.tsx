@@ -7,7 +7,7 @@ const underlineStyles =
   "after:content-['']  after:border-b-2 after:border-black border-solid after:block after:scale-0 transition-all group-hover:after:scale-100 group-hover:after:duration-500 group-hover:after:ease-out"
 const arrowStyles =
   'inline-block text-xs ml-1 group-hover:-rotate-180 transition-all duration-500 self-center'
-
+const listHoverStyles = 'rounded-full px-2 transition-all duration-300 hover:bg-gray-200'
 export default function Navbar() {
   const inputRef = useRef<HTMLInputElement>(null)
   const removeNavbar = () => {
@@ -16,7 +16,7 @@ export default function Navbar() {
   }
   return (
     <nav>
-      <ul className='mr-5 flex w-full content-between justify-between py-6 pb-2 shadow lg:text-sm'>
+      <ul className='mr-5 flex w-full content-between justify-between self-center py-6 pb-2 text-center shadow lg:bg-red-900'>
         <div className='my-auto ml-9 '>
           <li className='mx-2'>
             <Link
@@ -77,7 +77,7 @@ export default function Navbar() {
                 >
                   <a
                     onClick={removeNavbar}
-                    className='m-4 p-4 text-xl'
+                    className='text-x m-4 self-center p-4'
                   >
                     La empresa
                   </a>
@@ -109,27 +109,27 @@ export default function Navbar() {
                   </a>
                 </Link>
               </li>
-              <li className='mt-4'>
+              <li className='mt-4 self-center'>
                 <Link
                   legacyBehavior={true}
                   href='/webs/conatel/compromisos'
                 >
                   <a
                     onClick={removeNavbar}
-                    className='m-4 p-4 text-xl'
+                    className='m-4 self-center p-4 text-xl'
                   >
                     Compromisos
                   </a>
                 </Link>
               </li>
-              <li className='mt-4'>
+              <li className='mt-4 self-center'>
                 <Link
                   legacyBehavior={true}
                   href='/webs/conatel/contacto'
                 >
                   <a
                     onClick={removeNavbar}
-                    className='m-4 p-4 text-xl'
+                    className='m-4 self-center p-4 text-xl'
                   >
                     Contacto
                   </a>
@@ -177,20 +177,21 @@ export default function Navbar() {
                   >
                     <a className={`${underlineStyles} `}>La empresa</a>
                   </Link>
-                  <div className={`${arrowStyles} `}>⮛</div>
+                  <div className={`${arrowStyles} `}>↓</div>
                 </li>
                 <div className={`${hoverStyles} `}>
                   <div>
-                    <li>
+                    <li className={listHoverStyles}>
                       <Link
                         legacyBehavior={true}
                         href='/webs/conatel/la-empresa#bienvenidos'
                         scroll={false}
+                        className='bg-blue-600 hover:bg-red-300'
                       >
                         Bienvenidos
                       </Link>
                     </li>
-                    <li>
+                    <li className={listHoverStyles}>
                       <Link
                         legacyBehavior={true}
                         href='/webs/conatel/la-empresa#experiencia'
@@ -199,7 +200,7 @@ export default function Navbar() {
                         Experiencia
                       </Link>
                     </li>
-                    <li>
+                    <li className={listHoverStyles}>
                       <Link
                         legacyBehavior={true}
                         href='/webs/conatel/la-empresa#colaboraciones'
@@ -208,7 +209,7 @@ export default function Navbar() {
                         Colaboraciones
                       </Link>
                     </li>
-                    <li>
+                    <li className={listHoverStyles}>
                       <Link
                         legacyBehavior={true}
                         href='/webs/conatel/la-empresa#certificaciones'
@@ -234,10 +235,10 @@ export default function Navbar() {
                       Servicios de comunicaciones
                     </a>
                   </Link>
-                  <div className={`${arrowStyles}`}>⮛</div>
+                  <div className={`${arrowStyles} `}>↓</div>
                 </li>
                 <div className={`${hoverStyles} `}>
-                  <li>
+                  <li className={listHoverStyles}>
                     <Link
                       legacyBehavior={true}
                       href='/webs/conatel/servicios-comunicaciones#solucion-voz-datos'
@@ -245,7 +246,7 @@ export default function Navbar() {
                       Solución de voz y datos
                     </Link>
                   </li>
-                  <li>
+                  <li className={listHoverStyles}>
                     <Link
                       legacyBehavior={true}
                       href='/webs/conatel/servicios-comunicaciones#soluciones-multimedia'
@@ -253,7 +254,7 @@ export default function Navbar() {
                       Soluciones multimedia
                     </Link>
                   </li>
-                  <li>
+                  <li className={listHoverStyles}>
                     <Link
                       legacyBehavior={true}
                       href='/webs/conatel/servicios-comunicaciones#fibra-optica'
@@ -272,12 +273,12 @@ export default function Navbar() {
                   legacyBehavior={true}
                   href='/webs/conatel/servicios-seguridad'
                 >
-                  <a className={`${underlineStyles}`}>Servicios de seguridad</a>
+                  <a className={`${underlineStyles} self-center`}>Servicios de seguridad</a>
                 </Link>
-                <div className={`${arrowStyles}`}>⮛</div>
+                <div className={`${arrowStyles}`}>↓</div>
               </li>
               <div className={`${hoverStyles} `}>
-                <li>
+                <li className={listHoverStyles}>
                   <Link
                     legacyBehavior={true}
                     href='/webs/conatel/servicios-seguridad#soluciones-seguridad'
@@ -285,7 +286,7 @@ export default function Navbar() {
                     Soluciones de seguridad
                   </Link>
                 </li>
-                <li>
+                <li className={listHoverStyles}>
                   <Link href='/webs/conatel/servicios-seguridad#gestion-residencial'>
                     Gestión residencial
                   </Link>
@@ -293,15 +294,15 @@ export default function Navbar() {
               </div>
             </ol>
           </div>
-          <li className='group mx-2'>
+          <li className='group mx-2 self-center'>
             <Link
               href='/webs/conatel/compromisos'
-              className={`${underlineStyles}`}
+              className={`${underlineStyles} self-center`}
             >
               Compromisos
             </Link>
           </li>
-          <li className='group mx-2'>
+          <li className='group mx-2 self-center'>
             <Link
               href='/webs/conatel/contacto'
               className={`${underlineStyles}`}
