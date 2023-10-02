@@ -1,5 +1,6 @@
 import { OrthographicCamera } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
+import { useMemo, useState } from 'react'
 import Cell from '~/snake/Cell'
 import getBoard from '~/snake/getBoard'
 
@@ -7,10 +8,16 @@ export default function Snake() {
   const NUM_ROWS = 50
   const NUM_COLS = 50
   const CELL_SIZE = 15
-  const board = getBoard(NUM_ROWS, NUM_COLS)
+  const board = useMemo(() => getBoard(NUM_ROWS, NUM_COLS), [])
+  const [state, setState] = useState(board)
   function onClick(i: number, j: number) {
-    board.get(`row-${i}`).set(`col-${j}`, true)
-    console.log(`Changed: row ${i} and col ${j}`, board.get(`row-${i}`))
+    // if (!board) return
+    setState((prev) => {
+      const newMap = new Map(prev)
+      newMap.get('row-' + i).set('col-' + j, false)
+      return newMap
+    })
+    console.log('State:', state)
   }
   return (
     <div className='h-screen w-screen'>
@@ -28,12 +35,12 @@ export default function Snake() {
             console.log('Cols:', j)
             return (
               <Cell
-                key={`row-${i}-col${j}`}
+                key={`row-${i}-col${j}-${board.get(`row-${i}`).set(`col-${j}`, true)}`}
                 onClick={() => onClick(i, j)}
                 row={i}
                 col={j}
                 size={CELL_SIZE}
-                isChecked={board.get(`row-${i}`).get(`col-${j}`)}
+                isChecked={state.get(`row-${i}`).get(`col-${j}`)}
               />
             )
           })
