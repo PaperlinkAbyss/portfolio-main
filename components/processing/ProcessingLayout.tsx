@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import React, { createContext, PropsWithChildren, useState } from 'react'
+import toCap from '~/pokedex/toCap'
 export const colores = [
   { nombre: 'Blanco', color: 'rgb(255,255,255)' },
   { nombre: 'amarillo', color: 'rgb(255, 200, 0)' },
@@ -50,7 +51,7 @@ export default function ProcessingLayout({ children }: PropsWithChildren) {
               onClick={(event) => swapSelectedColor(event)}
               style={{ backgroundColor: `${color}` }}
             >
-              {nombre}
+              {toCap(nombre)}
             </div>
           )
         })}

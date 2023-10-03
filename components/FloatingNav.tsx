@@ -59,7 +59,7 @@ export default function FloatingNav() {
     <div className='z-50'>
       <div
         onClick={handleClick}
-        className={`' fixed bottom-4 right-9 inline-block rounded-full border-2 border-solid border-black bg-gray-300 p-3 text-center font-semibold transition-[width] duration-700 hover:bg-slate-500  ${
+        className={`' fixed bottom-4 right-9 inline-block rounded-full border-2 border-solid border-black bg-gray-300 p-3 text-center font-semibold transition-all duration-700 hover:bg-slate-500  ${
           isOpen ? 'w-3/4' : 'w-36'
         } `}
       >
@@ -74,7 +74,7 @@ export default function FloatingNav() {
       </div>
       <div
         className={`fixed bottom-20 right-9 z-50 h-3/4 w-3/4 bg-gray-400 ${
-          isOpen ? '' : 'left-full'
+          isOpen ? '' : '-right-9 w-2 translate-x-full'
         } scrollbar overflow-auto rounded-md p-2 transition-all duration-700`}
       >
         {projectArray.map(({ img, name, optional, original, slug }, index) => {
