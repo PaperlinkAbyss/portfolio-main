@@ -8,8 +8,9 @@ export type Player = 'white' | 'black'
 type Props = {
   color: Player
   piece: 'pawn' | 'king' | 'knight' | 'rook' | 'bishop' | 'queen'
+  position: [number, number]
 }
-const PieceDictionary = {
+export const PieceDictionary = {
   pawn: (color: Player) => <Pawn player={color} />,
   king: (color: Player) => <King player={color} />,
   knight: (color: Player) => <Knight player={color} />,
@@ -17,6 +18,7 @@ const PieceDictionary = {
   bishop: (color: Player) => <Bishop player={color} />,
   queen: (color: Player) => <Queen player={color} />,
 }
-export default function Piece({ color, piece }: Props) {
-  return PieceDictionary[piece] ?? <div>Not found</div>
+export default function Piece({ color, piece, position }: Props) {
+  console.log({ PieceDictionary, piece, color })
+  return PieceDictionary[piece]?.(color, position) ?? <div>Not found</div>
 }

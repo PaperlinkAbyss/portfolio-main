@@ -1,4 +1,6 @@
-export default function Rook() {
+import { PieceProps } from './Pawn'
+
+export default function Rook({ player }: PieceProps) {
   // alert
-  return <div>Am here</div>
+  return <div className='text-red-500'>{player} Rook</div>
 }
