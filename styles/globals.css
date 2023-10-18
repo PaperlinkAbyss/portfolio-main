@@ -138,3 +138,8 @@ body,
   min-height: 100vh;
   margin: 0 auto;
 }
+
+.grid-chess-board {
+  grid-template-columns: repeat(8, 5rem);
+  grid-template-rows: repeat(8, 5rem);
+}
