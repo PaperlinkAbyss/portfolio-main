@@ -1,38 +1,42 @@
-import Link from 'next/link'
-
-export default function Home({ currPage, setCurrPage }) {
+import { Dispatch, SetStateAction } from 'react'
+import { ProjectType, projectArray } from '~/FloatingNav'
+export type Props = {
+  currPage: ProjectType['slug']
+  setCurrPage: Dispatch<SetStateAction<ProjectType['slug']>>
+}
+export default function Home({ currPage, setCurrPage }: Props) {
   return (
     <>
       <iframe
         className={`${currPage ? 'h-screen w-screen' : 'hidden'}`}
         src={currPage}
       ></iframe>
-      <main className='mx-auto mt-3 grid min-w-[500px] max-w-max grid-cols-2 place-content-center text-center'>
+      <main className='mx-auto mt-3 grid min-w-[500px] max-w-max grid-cols-2 place-content-center p-2 text-center'>
         <article>
-          <h2 className='border-b-2 border-r-2 text-2xl'>Webs</h2>
+          <h2 className='border-b-2 border-r-2 border-gray-600 text-2xl'>Webs</h2>
           <ul>
             <li>
-              <Link href='/webs/conatel'>Conatel</Link>
+              <div onClick={() => setCurrPage(projectArray[0].slug)}>Conatel</div>
             </li>
             <li>
-              <Link href='/webs/landing-hotel'>Landing hotel</Link>
+              <div onClick={() => setCurrPage(projectArray[3].slug)}>Landing hotel</div>
             </li>
             <li>
-              <Link href='/webs/pokedex'>Pokedex</Link>
+              <div onClick={() => setCurrPage(projectArray[4].slug)}>Pokedex</div>
             </li>
           </ul>
         </article>
         <article>
-          <h2 className='border-b-2 text-2xl'>Games</h2>
+          <h2 className='border-b-2 border-gray-600 text-2xl'>Games</h2>
           <ul>
             <li>
-              <Link href='/games/color-picker'>Color picker</Link>
+              <div onClick={() => setCurrPage(projectArray[1].slug)}>Color picker</div>
             </li>
             <li>
-              <Link href='/games/tic-tac-toe'>Tic tac toe</Link>
+              <div onClick={() => setCurrPage(projectArray[2].slug)}>Tic tac toe</div>
             </li>
             <li>
-              <Link href='/games/processing'>Processing</Link>
+              <div onClick={() => setCurrPage(projectArray[5].slug)}>Processing</div>
             </li>
           </ul>
         </article>
@@ -41,7 +45,7 @@ export default function Home({ currPage, setCurrPage }) {
       <section className='ml-2 grid grid-cols-2'>
         <article className='m-2'>
           <h3 className='mb-2 w-max border-b-2 border-black/20 text-xl'>
-            <Link href='/webs/landing-hotel'>Landing hotel:</Link>
+            <div onClick={() => setCurrPage(projectArray[3].slug)}>Landing hotel:</div>
           </h3>
           <p>
             This landing was actually my very first page I created. I did it along the Pokedex to
@@ -55,7 +59,7 @@ export default function Home({ currPage, setCurrPage }) {
         </article>
         <article className='m-2'>
           <h3 className='mb-2 w-max border-b-2 border-black/20 text-xl'>
-            <Link href='/webs/pokedex'>Pokedex:</Link>
+            <div onClick={() => setCurrPage(projectArray[4].slug)}>Pokedex:</div>
           </h3>
           <p>
             On this project I learned how to use fetch and got my very first (and only) decent
@@ -68,7 +72,7 @@ export default function Home({ currPage, setCurrPage }) {
         </article>
         <article className='m-2'>
           <h3 className='mb-2 w-max border-b-2 border-black/20 text-xl'>
-            <Link href='/games/processing'>Processing:</Link>
+            <div onClick={() => setCurrPage(projectArray[5].slug)}>Processing:</div>
           </h3>
           <p>
             This page is more like a &quot;game&quot; but it&apos;s actually neither a game or a
@@ -96,14 +100,14 @@ export default function Home({ currPage, setCurrPage }) {
         </article>
         <article className='m-2'>
           <h3 className='mb-2 w-max border-b-2 border-black/20 text-xl'>
-            <Link href='/webs/conatel'>Conatel:</Link>
+            <div onClick={() => setCurrPage(projectArray[0].slug)}>Conatel:</div>
           </h3>
           <p>
             My very first page done from 0 with styling. It&apos;s a very simple copy of the
             original (
             <a
               className='underline'
-              href='https://www.conatel.biz'
+              href='https://conatel.biz'
             >
               conatel.biz
             </a>
@@ -118,7 +122,7 @@ export default function Home({ currPage, setCurrPage }) {
         </article>
         <article className='m-2'>
           <h3 className='mb-2 w-max border-b-2 border-black/20 text-xl'>
-            <Link href='/games/color-picker'>Color picker:</Link>
+            <div onClick={() => setCurrPage(projectArray[1].slug)}>Color picker:</div>
           </h3>
           <p>
             This game was actually something that popped up on my instagram while I was in Conatel.
@@ -129,7 +133,7 @@ export default function Home({ currPage, setCurrPage }) {
         </article>
         <article className='m-2'>
           <h3 className='mb-2 w-max border-b-2 border-black/20 text-xl'>
-            <Link href='/games/tic-tac-toe'>Tic tac toe:</Link>
+            <div onClick={() => setCurrPage(projectArray[2].slug)}>Tic tac toe:</div>
           </h3>
           <p>
             I actually limited myself with this one. It was meant to be a 3x3 by default that could

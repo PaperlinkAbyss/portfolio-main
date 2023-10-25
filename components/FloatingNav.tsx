@@ -1,6 +1,7 @@
+import { Props } from 'pages'
 import { useState } from 'react'
 
-type ProjectType = {
+export type ProjectType = {
   name: string
   slug: string
   original?: string
@@ -34,7 +35,7 @@ export const projectArray: ProjectType[] = [
   },
   {
     name: 'Pokedex',
-    slug: '/webs/pokedex',
+    slug: 'https://pokedex-main-eosin.vercel.app/',
     optional:
       "Same as the landing, someone requested me to test this. The original project used redux but I felt it was an overkill. It's very slow since there are so many images and fetches, be careful.",
   },
@@ -49,7 +50,7 @@ export const projectArray: ProjectType[] = [
     slug: '',
   },
 ]
-export default function FloatingNav({ setCurrPage }) {
+export default function FloatingNav({ setCurrPage }: Omit<Props, 'currPage'>) {
   const [isOpen, setIsOpen] = useState(false)
   function handleClick() {
     setIsOpen((state) => !state)

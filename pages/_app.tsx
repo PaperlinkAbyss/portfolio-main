@@ -1,7 +1,7 @@
 import { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import { ReactElement, ReactNode, useState } from 'react'
-import FloatingNav, { projectArray } from '~/FloatingNav'
+import FloatingNav, { ProjectType } from '~/FloatingNav'
 import '../styles/globals.css'
 
 // eslint-disable-next-line @typescript-eslint/ban-types
@@ -14,7 +14,7 @@ type AppPropsWithLayout = AppProps & {
 
 export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => page)
-  const [currPage, setCurrPage] = useState<keyof (typeof projectArray)[number]['slug']>('')
+  const [currPage, setCurrPage] = useState<ProjectType['slug']>('')
   return getLayout(
     <>
       <Component
