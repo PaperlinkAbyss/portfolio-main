@@ -1,8 +1,12 @@
 import Link from 'next/link'
 
-export default function Home() {
+export default function Home({ currPage, setCurrPage }) {
   return (
     <>
+      <iframe
+        className={`${currPage ? 'h-screen w-screen' : 'hidden'}`}
+        src={currPage}
+      ></iframe>
       <main className='mx-auto mt-3 grid min-w-[500px] max-w-max grid-cols-2 place-content-center text-center'>
         <article>
           <h2 className='border-b-2 border-r-2 text-2xl'>Webs</h2>

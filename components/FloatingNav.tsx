@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { useState } from 'react'
 
 type ProjectType = {
@@ -8,49 +7,49 @@ type ProjectType = {
   img?: string
   optional?: string
 }
-export default function FloatingNav() {
-  const projectArray: ProjectType[] = [
-    {
-      img: '/logo.png',
-      name: 'Conatel Telecomunicaciones',
-      original: 'https://conatel.biz',
-      slug: '/webs/conatel',
-      optional:
-        "Conatel is where I did some 'programming' practices after finishing a programming course. (Mostly wordpress-related)",
-    },
-    {
-      name: 'Color picker',
-      slug: '/games/color-picker',
-      optional: 'It has difficulties and options, wohoo',
-    },
-    {
-      name: 'Tic tac toe',
-      slug: '/games/tic-tac-toe',
-      optional: 'The game you have probably played tons of times already',
-    },
-    {
-      name: 'Landing hotel',
-      slug: '/webs/landing-hotel',
-      optional:
-        "This was done for someone who wanted to see how much I could do back then when I was in programming for like 1 month, don't expect much ",
-    },
-    {
-      name: 'Pokedex',
-      slug: '/webs/pokedex',
-      optional:
-        "Same as the landing, someone requested me to test this. The original project used redux but I felt it was an overkill. It's very slow since there are so many images and fetches, be careful.",
-    },
-    {
-      name: 'Processing for a friend',
-      slug: '/games/processing',
-      optional:
-        'This was made for a friend that had to do an art exposition and wanted it to be digitally made so I made her life a little bit easier by adding this with a palette she created. Later I added a perspective grid to do the same but without generating code for processing.',
-    },
-    {
-      name: 'Starting page',
-      slug: '/',
-    },
-  ]
+export const projectArray: ProjectType[] = [
+  {
+    img: '/logo.png',
+    name: 'Conatel Telecomunicaciones',
+    original: 'https://conatel.biz',
+    slug: 'https://conatel-29s6.vercel.app',
+    optional:
+      "Conatel is where I did some 'programming' practices after finishing a programming course. (Mostly wordpress-related)",
+  },
+  {
+    name: 'Color picker',
+    slug: 'https://color-picker-lilac-theta.vercel.app/',
+    optional: 'It has difficulties and options, wohoo',
+  },
+  {
+    name: 'Tic tac toe',
+    slug: 'https://tick-tack-toe-hazel.vercel.app/',
+    optional: 'The game you have probably played tons of times already',
+  },
+  {
+    name: 'Landing hotel',
+    slug: 'https://landing-hotel.vercel.app/',
+    optional:
+      "This was done for someone who wanted to see how much I could do back then when I was in programming for like 1 month, don't expect much ",
+  },
+  {
+    name: 'Pokedex',
+    slug: '/webs/pokedex',
+    optional:
+      "Same as the landing, someone requested me to test this. The original project used redux but I felt it was an overkill. It's very slow since there are so many images and fetches, be careful.",
+  },
+  {
+    name: 'Processing for a friend',
+    slug: 'https://processing-esther-1234.vercel.app/',
+    optional:
+      'This was made for a friend that had to do an art exposition and wanted it to be digitally made so I made her life a little bit easier by adding this with a palette she created. Later I added a perspective grid to do the same but without generating code for processing.',
+  },
+  {
+    name: 'Starting page',
+    slug: '',
+  },
+]
+export default function FloatingNav({ setCurrPage }) {
   const [isOpen, setIsOpen] = useState(false)
   function handleClick() {
     setIsOpen((state) => !state)
@@ -73,16 +72,17 @@ export default function FloatingNav() {
         Other pages
       </div>
       <div
-        className={`fixed bottom-20 right-9 z-50 h-3/4 w-3/4 bg-gray-400 ${
+        className={`fixed bottom-20 right-0 z-50 h-3/4 w-3/4 bg-gray-400 ${
           isOpen ? '' : '-right-9 w-2 translate-x-full'
         } scrollbar overflow-auto rounded-md p-2 transition-all duration-700`}
       >
         {projectArray.map(({ img, name, optional, original, slug }, index) => {
           if (index < 9)
             return (
-              <Link
+              <div
                 key={index}
-                href={slug}
+                // href={slug}
+                onClick={() => setCurrPage(slug)}
               >
                 <div className='m-2 flex flex-col rounded-md border-2 p-2'>
                   <div className='flex items-center text-center'>
@@ -106,7 +106,7 @@ export default function FloatingNav() {
                   </div>
                   <span className='text-sm font-light italic underline'>{original}</span>
                 </div>
-              </Link>
+              </div>
             )
         })}
       </div>
