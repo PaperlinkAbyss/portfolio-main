@@ -8,4 +8,5 @@ body,
   min-height: 100vh;
   margin: 0 auto;
   background: #6f6d78;
+  overflow: hidden;
 }
